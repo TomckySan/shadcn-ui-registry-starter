@@ -14,6 +14,7 @@ import { logo } from "@/app/demo/[name]/components/logo";
 import { productGrid } from "@/app/demo/[name]/components/product-grid";
 import { promo } from "@/app/demo/[name]/components/promo";
 import { osCard } from "@/app/demo/[name]/components/os-card";
+import { osAccordion } from "@/app/demo/[name]/components/os-accordion";
 
 // ui
 import { accordion } from "@/app/demo/[name]/ui/accordion";
@@ -65,6 +66,7 @@ export const demos: { [name: string]: Demo } = {
   "brand-sidebar": brandSidebar,
   "product-grid": productGrid,
   "os-card": osCard,
+  "os-accordion": osAccordion,
 
   // ui
   accordion,

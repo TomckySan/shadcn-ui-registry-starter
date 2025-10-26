@@ -97,6 +97,22 @@
       ]
     },
     {
+      "name": "os-accordion",
+      "type": "registry:component",
+      "title": "OutSystems Accordion",
+      "description": "An accordion component with OutSystems styling for expandable content sections",
+      "registryDependencies": [
+        "accordion",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-accordion.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "os-card",
       "type": "registry:component",
       "title": "OutSystems Card",
