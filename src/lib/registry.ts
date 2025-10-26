@@ -5,6 +5,7 @@ export interface Component {
   type: string;
   title: string;
   description?: string;
+  category?: string;
   files?: { path: string; type: string; target: string }[];
 }
 
@@ -53,4 +54,16 @@ export function getOutSystemsComponents() {
   return getRegistryItems().filter(
     (component) => component.type === "registry:component" && component.name.startsWith("os-"),
   );
+}
+
+export function getOutSystemsComponentsByCategory() {
+  const osComponents = getOutSystemsComponents();
+
+  return {
+    primitives: osComponents.filter((c) => c.category === "primitives"),
+    layout: osComponents.filter((c) => c.category === "layout"),
+    patterns: osComponents.filter((c) => c.category === "patterns"),
+    templates: osComponents.filter((c) => c.category === "templates"),
+    uncategorized: osComponents.filter((c) => !c.category),
+  };
 }

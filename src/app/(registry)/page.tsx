@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, Component, Square, ToyBrick } from "lucide-react";
+import { ArrowRight, Blocks, Box, Component, Layout, Layers, Square } from "lucide-react";
 import Link from "next/link";
 
 import { MCPTabs } from "@/components/registry/mcp-tabs";
@@ -9,12 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBlocks, getComponents, getOutSystemsComponents, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getOutSystemsComponentsByCategory } from "@/lib/registry";
 
-const uiItems = getUIPrimitives().slice(0, 5);
-const componentItems = getComponents().slice(0, 5);
 const blockItems = getBlocks().slice(0, 5);
-const outSystemsItems = getOutSystemsComponents().slice(0, 5);
+const osComponentsByCategory = getOutSystemsComponentsByCategory();
 
 export default function Home() {
   return (
@@ -31,38 +29,161 @@ export default function Home() {
         </div>
       </div>
 
-      <Card className="mb-4 shadow-none">
-        <CardHeader className="space-y-1">
-          <div className="flex items-center justify-between">
-            <CardTitle>OutSystems</CardTitle>
+      <div className="mb-4 space-y-4">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
             <div className="rounded-md bg-primary p-1">
               <Square className="size-5 text-primary-foreground" />
             </div>
+            <h2 className="font-bold text-2xl">OutSystems Design System</h2>
           </div>
-          <CardDescription>
-            OutSystems design system components for building modern applications
-          </CardDescription>
-        </CardHeader>
+          <p className="text-muted-foreground">
+            OutSystems UI components for building modern applications
+          </p>
+        </div>
 
-        <CardContent>
-          <div className="space-y-2">
-            {outSystemsItems.map((item) => (
-              <div
-                key={item.name}
-                className="flex items-center justify-between"
-              >
-                <Link
-                  href={`/registry/${item.name}`}
-                  className="text-sm hover:underline"
-                >
-                  {item.title}
-                </Link>
-                <ArrowRight className="size-4 text-muted-foreground" />
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+        <div className="grid gap-4 md:grid-cols-2">
+          {/* Primitives */}
+          {osComponentsByCategory.primitives.length > 0 && (
+            <Card className="shadow-none">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Primitives</CardTitle>
+                  <div className="rounded-md bg-blue-100 dark:bg-blue-900 p-1">
+                    <Box className="size-4 text-blue-600 dark:text-blue-400" />
+                  </div>
+                </div>
+                <CardDescription className="text-xs">
+                  Basic UI building blocks
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {osComponentsByCategory.primitives.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between"
+                    >
+                      <Link
+                        href={`/registry/${item.name}`}
+                        className="text-sm hover:underline"
+                      >
+                        {item.title}
+                      </Link>
+                      <ArrowRight className="size-4 text-muted-foreground" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Layout */}
+          {osComponentsByCategory.layout.length > 0 && (
+            <Card className="shadow-none">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Layout</CardTitle>
+                  <div className="rounded-md bg-green-100 dark:bg-green-900 p-1">
+                    <Layout className="size-4 text-green-600 dark:text-green-400" />
+                  </div>
+                </div>
+                <CardDescription className="text-xs">
+                  Layout and container components
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {osComponentsByCategory.layout.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between"
+                    >
+                      <Link
+                        href={`/registry/${item.name}`}
+                        className="text-sm hover:underline"
+                      >
+                        {item.title}
+                      </Link>
+                      <ArrowRight className="size-4 text-muted-foreground" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Patterns */}
+          {osComponentsByCategory.patterns.length > 0 && (
+            <Card className="shadow-none">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Patterns</CardTitle>
+                  <div className="rounded-md bg-purple-100 dark:bg-purple-900 p-1">
+                    <Layers className="size-4 text-purple-600 dark:text-purple-400" />
+                  </div>
+                </div>
+                <CardDescription className="text-xs">
+                  Common UI patterns
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {osComponentsByCategory.patterns.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between"
+                    >
+                      <Link
+                        href={`/registry/${item.name}`}
+                        className="text-sm hover:underline"
+                      >
+                        {item.title}
+                      </Link>
+                      <ArrowRight className="size-4 text-muted-foreground" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Templates */}
+          {osComponentsByCategory.templates.length > 0 && (
+            <Card className="shadow-none">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Templates</CardTitle>
+                  <div className="rounded-md bg-orange-100 dark:bg-orange-900 p-1">
+                    <Component className="size-4 text-orange-600 dark:text-orange-400" />
+                  </div>
+                </div>
+                <CardDescription className="text-xs">
+                  Page templates
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {osComponentsByCategory.templates.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between"
+                    >
+                      <Link
+                        href={`/registry/${item.name}`}
+                        className="text-sm hover:underline"
+                      >
+                        {item.title}
+                      </Link>
+                      <ArrowRight className="size-4 text-muted-foreground" />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </div>
 
       <Card className="mb-4 shadow-none">
         <CardHeader className="space-y-1">
@@ -97,73 +218,6 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <div className="mb-4 grid gap-6 md:grid-cols-2">
-        <Card className="shadow-none">
-          <CardHeader className="space-y-1">
-            <div className="flex items-center justify-between">
-              <CardTitle>UI Primitives</CardTitle>
-              <div className="rounded-md bg-foreground p-1">
-                <ToyBrick className="size-5 text-primary-foreground" />
-              </div>
-            </div>
-            <CardDescription>
-              Reusable UI primitives to build your components
-            </CardDescription>
-          </CardHeader>
-
-          <CardContent>
-            <div className="space-y-2">
-              {uiItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-center justify-between"
-                >
-                  <Link
-                    href={`/registry/${item.name}`}
-                    className="text-sm hover:underline"
-                  >
-                    {item.title}
-                  </Link>
-                  <ArrowRight className="size-4 text-muted-foreground" />
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="shadow-none">
-          <CardHeader className="space-y-1">
-            <div className="flex items-center justify-between">
-              <CardTitle>Components</CardTitle>
-              <div className="rounded-md bg-foreground p-1">
-                <Component className="size-5 text-primary-foreground" />
-              </div>
-            </div>
-            <CardDescription>
-              Compound components using common patterns
-            </CardDescription>
-          </CardHeader>
-
-          <CardContent>
-            <div className="space-y-2">
-              {componentItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-center justify-between"
-                >
-                  <Link
-                    href={`/registry/${item.name}`}
-                    className="text-sm hover:underline"
-                  >
-                    {item.title}
-                  </Link>
-                  <ArrowRight className="size-4 text-muted-foreground" />
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
 
       <div className="mb-4 rounded-lg border bg-card p-6">
         <div className="flex flex-col gap-2">

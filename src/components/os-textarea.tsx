@@ -1,19 +1,19 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-export interface OSInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface OSTextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   notValid?: boolean;
   size?: "small" | "default" | "large";
 }
 
-const OSInput = React.forwardRef<HTMLInputElement, OSInputProps>(
+const OSTextarea = React.forwardRef<HTMLTextAreaElement, OSTextareaProps>(
   ({ className, notValid = false, size = "default", ...props }, ref) => {
     return (
-      <input
+      <textarea
         ref={ref}
         className={cn(
-          "w-full rounded-md border bg-white px-3 font-normal transition-all",
+          "w-full rounded-md border bg-white px-3 py-2 font-normal transition-all resize-none",
           "placeholder:text-gray-400",
           "focus:outline-none focus:ring-0",
           "disabled:cursor-not-allowed disabled:opacity-50",
@@ -24,9 +24,9 @@ const OSInput = React.forwardRef<HTMLInputElement, OSInputProps>(
           },
           // Size variants
           {
-            "h-8 text-xs": size === "small",
-            "h-10 text-sm": size === "default",
-            "h-12 text-base": size === "large",
+            "min-h-[80px] text-xs": size === "small",
+            "min-h-[120px] text-sm": size === "default",
+            "min-h-[160px] text-base": size === "large",
           },
           className
         )}
@@ -36,6 +36,6 @@ const OSInput = React.forwardRef<HTMLInputElement, OSInputProps>(
   }
 );
 
-OSInput.displayName = "OSInput";
+OSTextarea.displayName = "OSTextarea";
 
-export { OSInput };
+export { OSTextarea };

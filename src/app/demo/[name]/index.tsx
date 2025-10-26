@@ -15,6 +15,12 @@ import { productGrid } from "@/app/demo/[name]/components/product-grid";
 import { promo } from "@/app/demo/[name]/components/promo";
 import { osCard } from "@/app/demo/[name]/components/os-card";
 import { osAccordion } from "@/app/demo/[name]/components/os-accordion";
+import { osButton } from "@/app/demo/[name]/components/os-button";
+import { osInput } from "@/app/demo/[name]/components/os-input";
+import { osSelect } from "@/app/demo/[name]/components/os-select";
+import { osCheckbox } from "@/app/demo/[name]/components/os-checkbox";
+import { osRadio } from "@/app/demo/[name]/components/os-radio";
+import { osTextarea } from "@/app/demo/[name]/components/os-textarea";
 
 // ui
 import { accordion } from "@/app/demo/[name]/ui/accordion";
@@ -67,6 +73,12 @@ export const demos: { [name: string]: Demo } = {
   "product-grid": productGrid,
   "os-card": osCard,
   "os-accordion": osAccordion,
+  "os-button": osButton,
+  "os-input": osInput,
+  "os-select": osSelect,
+  "os-checkbox": osCheckbox,
+  "os-radio": osRadio,
+  "os-textarea": osTextarea,
 
   // ui
   accordion,

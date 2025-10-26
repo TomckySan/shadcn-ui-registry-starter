@@ -99,6 +99,7 @@
     {
       "name": "os-accordion",
       "type": "registry:component",
+      "category": "layout",
       "title": "OutSystems Accordion",
       "description": "An accordion component with OutSystems styling for expandable content sections",
       "registryDependencies": [
@@ -115,6 +116,7 @@
     {
       "name": "os-card",
       "type": "registry:component",
+      "category": "layout",
       "title": "OutSystems Card",
       "description": "A card component for displaying content with OutSystems styling",
       "registryDependencies": [
@@ -124,6 +126,108 @@
       "files": [
         {
           "path": "src/components/os-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-button",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Button",
+      "description": "A button component with OutSystems styling including type, semantic, shape, and size variants",
+      "registryDependencies": [
+        "button",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-input",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Input",
+      "description": "An input component with OutSystems styling including validation states and size variants",
+      "registryDependencies": [
+        "input",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-select",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Select",
+      "description": "A select dropdown component with OutSystems styling",
+      "registryDependencies": [
+        "select",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-checkbox",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Checkbox",
+      "description": "A checkbox component with OutSystems styling",
+      "registryDependencies": [
+        "checkbox",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-checkbox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-radio",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Radio",
+      "description": "A radio button group component with OutSystems styling",
+      "registryDependencies": [
+        "radio-group",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-radio.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "os-textarea",
+      "type": "registry:component",
+      "category": "primitives",
+      "title": "OutSystems Textarea",
+      "description": "A textarea component with OutSystems styling including validation states and size variants",
+      "registryDependencies": [
+        "textarea",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/os-textarea.tsx",
           "type": "registry:component"
         }
       ]
