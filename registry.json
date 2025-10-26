@@ -629,11 +629,16 @@
       "name": "blank",
       "type": "registry:block",
       "title": "Blank",
-      "description": "A blank application with all brand components and code",
+      "description": "A showcase of all OutSystems UI components",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-sidebar.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/product-grid.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-button.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-input.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-textarea.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-select.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-checkbox.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-radio.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-card.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-accordion.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [

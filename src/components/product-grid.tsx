@@ -4,8 +4,8 @@ import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { OSButton } from "@/components/os-button";
+import { OSCard } from "@/components/os-card";
 import type { Product } from "@/lib/products";
 
 export default function ProductGrid({
@@ -21,49 +21,49 @@ export default function ProductGrid({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap gap-2">
-        <Button
-          variant={selectedCategory === null ? "default" : "outline"}
+        <OSButton
+          variant={selectedCategory === null ? "primary" : "secondary"}
           onClick={() => setSelectedCategory(null)}
-          className="rounded-full"
+          shape="rounded"
         >
           All
-        </Button>
+        </OSButton>
 
         {categories.map((category) => (
-          <Button
+          <OSButton
             key={category}
-            variant={selectedCategory === category ? "default" : "outline"}
+            variant={selectedCategory === category ? "primary" : "secondary"}
             onClick={() => setSelectedCategory(category)}
-            className="rounded-full"
+            shape="rounded"
           >
             {category}
-          </Button>
+          </OSButton>
         ))}
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredProducts.map((product) => (
-          <Card key={product.id} className="overflow-hidden p-0">
+          <OSCard key={product.id} className="overflow-hidden p-0">
             <Link href={`/products/${product.id}`}>
               <div className="flex aspect-square items-center justify-center bg-white p-6" />
             </Link>
 
-            <CardContent className="p-4">
+            <div className="p-4">
               <Link href={`/products/${product.id}`}>
                 <h3 className="font-semibold">{product.name}</h3>
                 <p className="line-clamp-2 text-gray-500 text-sm">
                   {product.description}
                 </p>
               </Link>
-            </CardContent>
+            </div>
 
-            <CardFooter className="flex items-center justify-between p-4 pt-0">
+            <div className="flex items-center justify-between p-4 pt-0">
               <div className="font-semibold">${product.price.toFixed(2)}</div>
-              <Button size="sm">
+              <OSButton size="small" variant="primary">
                 <ShoppingCart className="mr-2 size-4" /> Add
-              </Button>
-            </CardFooter>
-          </Card>
+              </OSButton>
+            </div>
+          </OSCard>
         ))}
       </div>
     </div>

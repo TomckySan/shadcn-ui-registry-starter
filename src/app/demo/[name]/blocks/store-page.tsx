@@ -2,8 +2,11 @@ import ProductGrid from "@/components/product-grid";
 import { getCategories, getProducts } from "@/lib/products";
 
 export default async function StorePage() {
-  const products = await getProducts();
+  const allProducts = await getProducts();
   const categories = await getCategories();
+
+  // Limit to 8 products for demo
+  const products = allProducts.slice(0, 8);
 
   return (
     <div className="flex min-h-screen flex-col">
