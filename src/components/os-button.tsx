@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
  * - Disabled state
  */
 
-export interface OSButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface OSButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "size"> {
   /**
    * Button variant
    * @default "primary"
