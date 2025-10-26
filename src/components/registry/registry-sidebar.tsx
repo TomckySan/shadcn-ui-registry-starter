@@ -7,6 +7,7 @@ import {
   Home,
   Menu,
   Search,
+  Square,
   ToyBrick,
   X,
 } from "lucide-react";
@@ -37,11 +38,12 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getComponents, getOutSystemsComponents, getUIPrimitives } from "@/lib/registry";
 
 const uiItems = getUIPrimitives();
 const componentItems = getComponents();
 const blockItems = getBlocks();
+const outSystemsItems = getOutSystemsComponents();
 
 export const gettingStartedItems = [
   { title: "Home", path: "/" },
@@ -69,6 +71,7 @@ export function RegistrySidebar() {
   const [filteredUiItems, setFilteredUiItems] = useState(uiItems);
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
+  const [filteredOutSystemsItems, setFilteredOutSystemsItems] = useState(outSystemsItems);
 
   useEffect(() => {
     if (searchTerm) {
@@ -87,10 +90,16 @@ export function RegistrySidebar() {
           item.title.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
+      setFilteredOutSystemsItems(
+        outSystemsItems.filter((item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
     } else {
       setFilteredUiItems(uiItems);
       setFilteredComponents(componentItems);
       setFilteredBlocks(blockItems);
+      setFilteredOutSystemsItems(outSystemsItems);
     }
   }, [searchTerm]);
 
@@ -152,6 +161,44 @@ export function RegistrySidebar() {
                           <Link
                             onClick={() => setOpenMobile(false)}
                             href={item.path}
+                          >
+                            {item.title}
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
+
+          <Collapsible defaultOpen={true} className="group/collapsible">
+            <SidebarGroup>
+              <CollapsibleTrigger className="w-full">
+                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
+                  <div className="flex min-w-0 items-center">
+                    <Square className="size-4 flex-shrink-0" />
+                    <span className="ml-2 transition-all duration-200">
+                      OutSystems
+                    </span>
+                  </div>
+                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                </SidebarGroupLabel>
+              </CollapsibleTrigger>
+
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {filteredOutSystemsItems.map((item) => (
+                      <SidebarMenuItem key={item.name}>
+                        <SidebarMenuButton
+                          asChild
+                          isActive={pathname === item.name}
+                        >
+                          <Link
+                            onClick={() => setOpenMobile(false)}
+                            href={`/registry/${item.name}`}
                           >
                             {item.title}
                           </Link>

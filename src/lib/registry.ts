@@ -45,6 +45,12 @@ export function getUIPrimitives() {
 
 export function getComponents() {
   return getRegistryItems().filter(
-    (component) => component.type === "registry:component",
+    (component) => component.type === "registry:component" && !component.name.startsWith("os-"),
+  );
+}
+
+export function getOutSystemsComponents() {
+  return getRegistryItems().filter(
+    (component) => component.type === "registry:component" && component.name.startsWith("os-"),
   );
 }
