@@ -15,21 +15,53 @@ import { cn } from "@/lib/utils";
  * - Consistent spacing
  */
 
-export interface OSAccordionProps
-  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> {
+export interface OSAccordionProps {
   /**
    * Accordion variant
    * @default "default"
    */
   variant?: "default" | "bordered" | "separated";
+  /**
+   * Accordion type
+   */
+  type?: "single" | "multiple";
+  /**
+   * Whether items can be collapsed
+   */
+  collapsible?: boolean;
+  /**
+   * Class name
+   */
+  className?: string;
+  /**
+   * Children elements
+   */
+  children?: React.ReactNode;
+  /**
+   * Default value for controlled accordion
+   */
+  defaultValue?: string | string[];
+  /**
+   * Value for controlled accordion
+   */
+  value?: string | string[];
+  /**
+   * Callback when value changes
+   */
+  onValueChange?: (value: string | string[]) => void;
 }
 
 const OSAccordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   OSAccordionProps
->(({ className, variant = "default", ...props }, ref) => (
+>(({ className, variant = "default", type, collapsible, children, defaultValue, value, onValueChange, ...props }, ref) => (
   <AccordionPrimitive.Root
     ref={ref}
+    type={type as any}
+    collapsible={collapsible}
+    defaultValue={defaultValue}
+    value={value}
+    onValueChange={onValueChange}
     className={cn(
       {
         "rounded-lg border bg-card shadow-sm overflow-hidden": variant === "default",
@@ -39,7 +71,9 @@ const OSAccordion = React.forwardRef<
       className
     )}
     {...props}
-  />
+  >
+    {children}
+  </AccordionPrimitive.Root>
 ));
 OSAccordion.displayName = "OSAccordion";
 
