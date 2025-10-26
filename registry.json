@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "Registry Starter",
-  "homepage": "https://registry-starter.vercel.app",
+  "name": "Rose Theme",
+  "homepage": "https://shadcn-ui-registry-starter-gray.vercel.app",
   "items": [
     {
       "name": "theme",
