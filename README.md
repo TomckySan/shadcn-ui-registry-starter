@@ -144,3 +144,50 @@ Your app should now be running on [localhost:3000](http://localhost:3000).
 `@/lib` contains all business logic & utils
 
 `@/layouts` contains all v0 layouts used in `registry.json`
+
+`scripts/` contains registry generation scripts
+
+## OutSystems UI Patterns
+
+This registry has been extended to include OutSystems UI Patterns with automated registry generation.
+
+### Pattern Management
+
+All patterns are defined in `scripts/outsystems-patterns.json`. To add or modify patterns:
+
+1. Edit `scripts/outsystems-patterns.json`
+2. Run `npm run registry:generate` to regenerate `registry.json`
+3. Component files are located in `src/components/os-*.tsx`
+
+### Available Pattern Categories
+
+- **Content**: Card, Section, Timeline, Gallery
+- **Navigation**: Tabs, Sidebar, Breadcrumbs, Menu
+- **Interaction**: Modal, Tooltip, Notification, Floating Actions
+- **Data**: Table, Data Grid, List, Search
+- **Forms**: Input, Checkbox, Radio, Switch, Dropdown
+- **Utilities**: Progress Bar, Progress Circle, Badge, Alert, Skeleton
+
+### Adding New Patterns
+
+```bash
+# 1. Add pattern definition to scripts/outsystems-patterns.json
+# 2. Generate updated registry.json
+npm run registry:generate
+
+# 3. Create component implementation
+# Create src/components/os-your-pattern.tsx
+
+# 4. Build registry
+npm run registry:build
+```
+
+### Theme Customization
+
+The registry uses OutSystems-inspired blue theme colors. To customize:
+
+1. Edit theme colors in `scripts/outsystems-patterns.json`
+2. Run `npm run registry:generate`
+3. Manually update `src/app/globals.css` to match
+
+This approach minimizes the dual maintenance issue between `globals.css` and `registry.json`.
