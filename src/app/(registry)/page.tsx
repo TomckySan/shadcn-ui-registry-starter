@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, Component, ToyBrick } from "lucide-react";
+import { ArrowRight, Blocks, Component, Square, ToyBrick } from "lucide-react";
 import Link from "next/link";
 
 import { MCPTabs } from "@/components/registry/mcp-tabs";
@@ -9,11 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getComponents, getOutSystemsComponents, getUIPrimitives } from "@/lib/registry";
 
 const uiItems = getUIPrimitives().slice(0, 5);
 const componentItems = getComponents().slice(0, 5);
 const blockItems = getBlocks().slice(0, 5);
+const outSystemsItems = getOutSystemsComponents().slice(0, 5);
 
 export default function Home() {
   return (
@@ -29,6 +30,39 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <Card className="mb-4 shadow-none">
+        <CardHeader className="space-y-1">
+          <div className="flex items-center justify-between">
+            <CardTitle>OutSystems</CardTitle>
+            <div className="rounded-md bg-primary p-1">
+              <Square className="size-5 text-primary-foreground" />
+            </div>
+          </div>
+          <CardDescription>
+            OutSystems design system components for building modern applications
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent>
+          <div className="space-y-2">
+            {outSystemsItems.map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center justify-between"
+              >
+                <Link
+                  href={`/registry/${item.name}`}
+                  className="text-sm hover:underline"
+                >
+                  {item.title}
+                </Link>
+                <ArrowRight className="size-4 text-muted-foreground" />
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
       <Card className="mb-4 shadow-none">
         <CardHeader className="space-y-1">
