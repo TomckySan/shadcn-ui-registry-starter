@@ -111,7 +111,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="ghost"
+          variant="secondary"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Email
@@ -145,7 +145,7 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
+            <Button variant="secondary" className="h-8 w-8 p-0">
               <span className="sr-only">Open menu</span>
               <MoreHorizontal />
             </Button>
@@ -208,7 +208,7 @@ export function FinanceDataTable() {
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="secondary" className="ml-auto">
               Columns <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
@@ -291,16 +291,16 @@ export function FinanceDataTable() {
         </div>
         <div className="space-x-2">
           <Button
-            variant="outline"
-            size="sm"
+            variant="secondary"
+            size="small"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
           </Button>
           <Button
-            variant="outline"
-            size="sm"
+            variant="secondary"
+            size="small"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >

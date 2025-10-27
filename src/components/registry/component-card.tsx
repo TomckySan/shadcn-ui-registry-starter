@@ -65,7 +65,7 @@ export function ComponentCard({
                     <TooltipTrigger asChild>
                       <Button
                         onClick={copyToClipboard}
-                        variant="outline"
+                        variant="secondary"
                         className="p-4"
                         aria-label="Copy npx command to clipboard"
                       >

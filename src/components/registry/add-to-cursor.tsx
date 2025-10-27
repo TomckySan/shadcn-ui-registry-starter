@@ -16,7 +16,7 @@ export function AddToCursor({
 
   return (
     <Button
-      size="sm"
+      size="small"
       className="bg-black text-white hover:bg-black hover:shadow-sm dark:bg-white dark:text-black dark:hover:bg-white"
       asChild
     >

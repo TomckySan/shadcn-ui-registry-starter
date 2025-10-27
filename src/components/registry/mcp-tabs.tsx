@@ -70,8 +70,8 @@ export function MCPTabs({ rootUrl }: { rootUrl: string }) {
           {tab === "cursor" && <AddToCursor mcp={mcp} />}
 
           <Button
-            size="sm"
-            variant="outline"
+            size="small"
+            variant="secondary"
             onClick={() => {
               copyToClipboard(mcpServer);
               setHasCopied(true);

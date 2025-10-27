@@ -32,7 +32,7 @@ export function Hero({
             <Button
               asChild
               variant="secondary"
-              size="lg"
+              size="large"
               className="rounded-md px-8"
             >
               <Link href={buttonLink}>{buttonText}</Link>

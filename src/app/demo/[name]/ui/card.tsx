@@ -161,10 +161,10 @@ export const card = {
             </div>
 
             <div className="flex gap-2 pt-4 border-t">
-              <Button variant="outline" size="sm" className="flex-1">
+              <Button variant="secondary" size="small" className="flex-1">
                 Back
               </Button>
-              <Button variant="default" size="sm" className="flex-1">
+              <Button variant="primary" size="small" className="flex-1">
                 Continue
               </Button>
             </div>

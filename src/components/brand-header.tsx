@@ -21,8 +21,8 @@ export function BrandHeader() {
       <div className="flex h-16 items-center justify-between px-2">
         <div className="flex items-center space-x-4">
           <Button
-            variant="ghost"
-            size="icon"
+            variant="secondary"
+            size="small"
             className="hidden size-8 md:flex"
             onClick={toggleSidebar}
           >
@@ -34,8 +34,8 @@ export function BrandHeader() {
           </Button>
 
           <Button
-            variant="ghost"
-            size="icon"
+            variant="secondary"
+            size="small"
             className="size-8 md:hidden"
             onClick={toggleSidebar}
           >
@@ -61,8 +61,8 @@ export function BrandHeader() {
             </div>
           ) : (
             <Button
-              variant="ghost"
-              size="sm"
+              variant="secondary"
+              size="small"
               className="text-foreground"
               onClick={() => setIsSearchOpen(true)}
             >
@@ -71,12 +71,12 @@ export function BrandHeader() {
             </Button>
           )}
 
-          <Button variant="ghost" size="sm" className="text-foreground">
+          <Button variant="secondary" size="small" className="text-foreground">
             <HelpCircle className="mr-2 size-4" />
             Support
           </Button>
 
-          <Button variant="ghost" size="sm" className="text-foreground">
+          <Button variant="secondary" size="small" className="text-foreground">
             Upgrade Trial
           </Button>
 
@@ -88,7 +88,7 @@ export function BrandHeader() {
         </div>
 
         <div className="flex gap-2 md:hidden">
-          <Button variant="ghost" size="sm" className="text-foreground">
+          <Button variant="secondary" size="small" className="text-foreground">
             <Search className="h-5 w-5" />
           </Button>
           <Avatar className="size-8">

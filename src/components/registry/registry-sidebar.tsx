@@ -115,7 +115,7 @@ export function RegistrySidebar() {
           </Link>
 
           <Button
-            variant="ghost"
+            variant="secondary"
             className="md:hidden"
             onClick={() => setOpenMobile(false)}
           >

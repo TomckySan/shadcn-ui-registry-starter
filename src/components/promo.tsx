@@ -24,7 +24,7 @@ export function Promo({
         </h1>
         <p>{description}</p>
         <div>
-          <Button asChild size="lg" className="rounded-md">
+          <Button asChild size="large" className="rounded-md">
             <Link href={buttonLink}>{buttonText}</Link>
           </Button>
         </div>
