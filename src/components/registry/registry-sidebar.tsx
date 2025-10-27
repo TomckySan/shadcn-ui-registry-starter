@@ -39,10 +39,11 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { getBlocks, getOutSystemsComponentsByCategory } from "@/lib/registry";
+import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
 const blockItems = getBlocks();
 const osComponentsByCategory = getOutSystemsComponentsByCategory();
+const uiItems = getUIPrimitives();
 
 export const gettingStartedItems = [
   { title: "Home", path: "/" },
@@ -68,6 +69,7 @@ export function RegistrySidebar() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
+  const [filteredUIPrimitives, setFilteredUIPrimitives] = useState(uiItems);
   const [filteredOSPrimitives, setFilteredOSPrimitives] = useState(osComponentsByCategory.primitives);
   const [filteredOSLayout, setFilteredOSLayout] = useState(osComponentsByCategory.layout);
   const [filteredOSPatterns, setFilteredOSPatterns] = useState(osComponentsByCategory.patterns);
@@ -78,6 +80,9 @@ export function RegistrySidebar() {
       const search = searchTerm.toLowerCase();
       setFilteredBlocks(
         blockItems.filter((item) => item.title.toLowerCase().includes(search)),
+      );
+      setFilteredUIPrimitives(
+        uiItems.filter((item) => item.title.toLowerCase().includes(search)),
       );
       setFilteredOSPrimitives(
         osComponentsByCategory.primitives.filter((item) => item.title.toLowerCase().includes(search)),
@@ -93,6 +98,7 @@ export function RegistrySidebar() {
       );
     } else {
       setFilteredBlocks(blockItems);
+      setFilteredUIPrimitives(uiItems);
       setFilteredOSPrimitives(osComponentsByCategory.primitives);
       setFilteredOSLayout(osComponentsByCategory.layout);
       setFilteredOSPatterns(osComponentsByCategory.patterns);
@@ -169,6 +175,83 @@ export function RegistrySidebar() {
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
+
+          {/* Blocks */}
+          <Collapsible defaultOpen={true} className="group/collapsible">
+            <SidebarGroup>
+              <CollapsibleTrigger className="w-full">
+                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
+                  <div className="flex min-w-0 items-center">
+                    <Blocks className="size-4 flex-shrink-0" />
+                    <span className="ml-2 transition-all duration-200">
+                      Blocks
+                    </span>
+                  </div>
+                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                </SidebarGroupLabel>
+              </CollapsibleTrigger>
+
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {filteredBlocks.map((item) => (
+                      <SidebarMenuItem key={item.name}>
+                        <SidebarMenuButton
+                          asChild
+                          isActive={pathname === item.name}
+                        >
+                          <Link
+                            onClick={() => setOpenMobile(false)}
+                            href={`/registry/${item.name}`}
+                          >
+                            {item.title}
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
+
+          {/* UI */}
+          {filteredUIPrimitives.length > 0 && (
+            <Collapsible defaultOpen={true} className="group/collapsible">
+              <SidebarGroup>
+                <CollapsibleTrigger className="w-full">
+                  <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
+                    <div className="flex min-w-0 items-center">
+                      <Component className="size-4 flex-shrink-0" />
+                      <span className="ml-2 transition-all duration-200">UI</span>
+                    </div>
+                    <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                  </SidebarGroupLabel>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {filteredUIPrimitives.map((item) => (
+                        <SidebarMenuItem key={item.name}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={pathname === `/registry/${item.name}`}
+                          >
+                            <Link
+                              onClick={() => setOpenMobile(false)}
+                              href={`/registry/${item.name}`}
+                            >
+                              {item.title}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </CollapsibleContent>
+              </SidebarGroup>
+            </Collapsible>
+          )}
 
           {/* Primitives */}
           {filteredOSPrimitives.length > 0 && (
@@ -321,44 +404,6 @@ export function RegistrySidebar() {
               </SidebarGroup>
             </Collapsible>
           )}
-
-          <Collapsible defaultOpen={true} className="group/collapsible">
-            <SidebarGroup>
-              <CollapsibleTrigger className="w-full">
-                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <Blocks className="size-4 flex-shrink-0" />
-                    <span className="ml-2 transition-all duration-200">
-                      Blocks
-                    </span>
-                  </div>
-                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
-                </SidebarGroupLabel>
-              </CollapsibleTrigger>
-
-              <CollapsibleContent>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {filteredBlocks.map((item) => (
-                      <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.name}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={`/registry/${item.name}`}
-                          >
-                            {item.title}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </CollapsibleContent>
-            </SidebarGroup>
-          </Collapsible>
 
         </ScrollArea>
       </SidebarContent>

@@ -1,21 +1,41 @@
-import type * as React from "react";
-
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
-  return (
-    <input
-      type={type}
-      data-slot="input"
-      className={cn(
-        "flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30",
-        "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
-        "aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40",
-        className,
-      )}
-      {...props}
-    />
-  );
+export interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+  notValid?: boolean;
+  size?: "small" | "default" | "large";
 }
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, notValid = false, size = "default", ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        className={cn(
+          "w-full rounded-md border bg-white px-3 font-normal transition-all",
+          "placeholder:text-gray-400",
+          "focus:outline-none focus:ring-0",
+          "disabled:cursor-not-allowed disabled:opacity-50",
+          // Border and focus states
+          {
+            "border-gray-300 focus:border-blue-500": !notValid,
+            "border-red-500 focus:border-red-500": notValid,
+          },
+          // Size variants
+          {
+            "h-8 text-xs": size === "small",
+            "h-10 text-sm": size === "default",
+            "h-12 text-base": size === "large",
+          },
+          className
+        )}
+        {...props}
+      />
+    );
+  }
+);
+
+Input.displayName = "Input";
 
 export { Input };

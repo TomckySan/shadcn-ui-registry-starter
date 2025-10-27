@@ -1,11 +1,11 @@
-import { OSTextarea } from "@/components/os-textarea";
+import { Textarea } from "@/components/ui/textarea";
 
-export const osTextarea = {
-  name: "os-textarea",
+export const textarea = {
+  name: "textarea",
   components: {
     default: (
       <div className="w-full max-w-2xl mx-auto p-8">
-        <OSTextarea placeholder="Comment" />
+        <Textarea placeholder="Comment" />
       </div>
     ),
 
@@ -14,15 +14,15 @@ export const osTextarea = {
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           <div>
             <label className="block mb-2 text-sm font-medium">Small</label>
-            <OSTextarea size="small" placeholder="Small textarea" />
+            <Textarea size="small" placeholder="Small textarea" />
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Default</label>
-            <OSTextarea size="default" placeholder="Default textarea" />
+            <Textarea size="default" placeholder="Default textarea" />
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Large</label>
-            <OSTextarea size="large" placeholder="Large textarea" />
+            <Textarea size="large" placeholder="Large textarea" />
           </div>
         </div>
       </div>
@@ -33,15 +33,15 @@ export const osTextarea = {
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
           <div>
             <label className="block mb-2 text-sm font-medium">Normal</label>
-            <OSTextarea placeholder="Comment" />
+            <Textarea placeholder="Comment" />
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Not Valid (Error)</label>
-            <OSTextarea notValid placeholder="Comment" />
+            <Textarea notValid placeholder="Comment" />
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Disabled</label>
-            <OSTextarea disabled placeholder="Comment" />
+            <Textarea disabled placeholder="Comment" />
           </div>
         </div>
       </div>
@@ -50,9 +50,9 @@ export const osTextarea = {
     placeholder: (
       <div className="w-full p-8">
         <div className="flex flex-col gap-4 max-w-4xl mx-auto">
-          <OSTextarea placeholder="Enter your comment here..." />
-          <OSTextarea placeholder="Describe the issue..." />
-          <OSTextarea placeholder="Write your message..." />
+          <Textarea placeholder="Enter your comment here..." />
+          <Textarea placeholder="Describe the issue..." />
+          <Textarea placeholder="Write your message..." />
         </div>
       </div>
     ),

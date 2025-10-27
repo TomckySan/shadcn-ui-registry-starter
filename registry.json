@@ -1,85 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "Rose Theme",
+  "name": "OutSystems UI Registry",
   "homepage": "https://shadcn-ui-registry-starter-gray.vercel.app",
   "items": [
     {
       "name": "theme",
       "type": "registry:theme",
-      "title": "OutSystems Theme",
-      "description": "OutSystems UI design system theme with blue primary colors",
-      "cssVars": {
-        "light": {
-          "background": "oklch(0.97 0.01 80.72)",
-          "foreground": "oklch(0.3 0.04 30.2)",
-          "card": "oklch(0.97 0.01 80.72)",
-          "card-foreground": "oklch(0.3 0.04 30.2)",
-          "popover": "oklch(0.97 0.01 80.72)",
-          "popover-foreground": "oklch(0.3 0.04 30.2)",
-          "muted": "oklch(0.94 0.01 74.42)",
-          "muted-foreground": "oklch(0.45 0.05 39.21)",
-          "destructive": "oklch(0.54 0.19 26.72)",
-          "destructive-foreground": "oklch(1.0 0 0)",
-          "border": "oklch(0.88 0.02 74.64)",
-          "input": "oklch(0.88 0.02 74.64)",
-          "radius": "0.5rem",
-          "primary": "oklch(0.55 0.18 250)",
-          "primary-foreground": "oklch(1.0 0 0)",
-          "secondary": "oklch(0.96 0.01 250)",
-          "secondary-foreground": "oklch(0.52 0.12 250)",
-          "accent": "oklch(0.90 0.05 250)",
-          "accent-foreground": "oklch(0.52 0.12 250)",
-          "ring": "oklch(0.55 0.18 250)",
-          "chart-1": "oklch(0.72 0.18 250)",
-          "chart-2": "oklch(0.65 0.16 250)",
-          "chart-3": "oklch(0.58 0.15 250)",
-          "chart-4": "oklch(0.48 0.12 250)",
-          "chart-5": "oklch(0.35 0.08 250)",
-          "sidebar": "oklch(0.94 0.01 74.42)",
-          "sidebar-foreground": "oklch(0.3 0.04 30.2)",
-          "sidebar-primary": "oklch(0.55 0.18 250)",
-          "sidebar-primary-foreground": "oklch(1.0 0 0)",
-          "sidebar-accent": "oklch(0.90 0.05 250)",
-          "sidebar-accent-foreground": "oklch(0.52 0.12 250)",
-          "sidebar-border": "oklch(0.88 0.02 74.64)",
-          "sidebar-ring": "oklch(0.55 0.18 250)"
-        },
-        "dark": {
-          "background": "oklch(0.15 0.01 74.42)",
-          "foreground": "oklch(0.95 0.02 80.72)",
-          "card": "oklch(0.12 0.01 80.72)",
-          "card-foreground": "oklch(0.95 0.02 80.72)",
-          "popover": "oklch(0.12 0.01 80.72)",
-          "popover-foreground": "oklch(0.95 0.02 80.72)",
-          "muted": "oklch(0.18 0.01 74.42)",
-          "muted-foreground": "oklch(0.65 0.03 74.42)",
-          "destructive": "oklch(0.62 0.22 26.72)",
-          "destructive-foreground": "oklch(0.95 0.02 80.72)",
-          "border": "oklch(0.22 0.02 74.64)",
-          "input": "oklch(0.22 0.02 74.64)",
-          "radius": "0.5rem",
-          "primary": "oklch(0.65 0.20 250)",
-          "primary-foreground": "oklch(0.09 0.01 80.72)",
-          "secondary": "oklch(0.15 0.02 250)",
-          "secondary-foreground": "oklch(0.70 0.15 250)",
-          "accent": "oklch(0.25 0.05 250)",
-          "accent-foreground": "oklch(0.70 0.15 250)",
-          "ring": "oklch(0.65 0.20 250)",
-          "chart-1": "oklch(0.75 0.20 250)",
-          "chart-2": "oklch(0.68 0.18 250)",
-          "chart-3": "oklch(0.65 0.18 250)",
-          "chart-4": "oklch(0.55 0.14 250)",
-          "chart-5": "oklch(0.40 0.10 250)",
-          "sidebar": "oklch(0.15 0.01 74.42)",
-          "sidebar-foreground": "oklch(0.95 0.02 80.72)",
-          "sidebar-primary": "oklch(0.65 0.20 250)",
-          "sidebar-primary-foreground": "oklch(0.09 0.01 80.72)",
-          "sidebar-accent": "oklch(0.25 0.05 250)",
-          "sidebar-accent-foreground": "oklch(0.70 0.15 250)",
-          "sidebar-border": "oklch(0.22 0.02 74.64)",
-          "sidebar-ring": "oklch(0.65 0.20 250)"
-        }
-      },
+      "title": "OutSystems UI Theme",
+      "description": "OutSystems UI design system theme",
       "dependencies": [
         "radix-ui"
       ],
@@ -93,425 +21,6 @@
           "path": "postcss.config.mjs",
           "type": "registry:file",
           "target": "postcss.config.mjs"
-        }
-      ]
-    },
-    {
-      "name": "os-accordion",
-      "type": "registry:component",
-      "category": "layout",
-      "title": "OutSystems Accordion",
-      "description": "An accordion component with OutSystems styling for expandable content sections",
-      "registryDependencies": [
-        "accordion",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-accordion.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-card",
-      "type": "registry:component",
-      "category": "layout",
-      "title": "OutSystems Card",
-      "description": "A card component for displaying content with OutSystems styling",
-      "registryDependencies": [
-        "card",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-card.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-button",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Button",
-      "description": "A button component with OutSystems styling including type, semantic, shape, and size variants",
-      "registryDependencies": [
-        "button",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-button.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-input",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Input",
-      "description": "An input component with OutSystems styling including validation states and size variants",
-      "registryDependencies": [
-        "input",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-input.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-select",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Select",
-      "description": "A select dropdown component with OutSystems styling",
-      "registryDependencies": [
-        "select",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-select.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-checkbox",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Checkbox",
-      "description": "A checkbox component with OutSystems styling",
-      "registryDependencies": [
-        "checkbox",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-checkbox.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-radio",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Radio",
-      "description": "A radio button group component with OutSystems styling",
-      "registryDependencies": [
-        "radio-group",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-radio.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-textarea",
-      "type": "registry:component",
-      "category": "primitives",
-      "title": "OutSystems Textarea",
-      "description": "A textarea component with OutSystems styling including validation states and size variants",
-      "registryDependencies": [
-        "textarea",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-textarea.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-section",
-      "type": "registry:component",
-      "title": "OutSystems Section",
-      "description": "A section container with OutSystems styling",
-      "registryDependencies": [
-        "card",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-section.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-timeline",
-      "type": "registry:component",
-      "title": "OutSystems Timeline",
-      "description": "A timeline component for displaying chronological events",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-timeline.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-gallery",
-      "type": "registry:component",
-      "title": "OutSystems Gallery",
-      "description": "An image gallery with grid layout",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-gallery.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-tabs",
-      "type": "registry:component",
-      "title": "OutSystems Tabs",
-      "description": "Tabbed navigation with OutSystems styling",
-      "registryDependencies": [
-        "tabs",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-tabs.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-sidebar",
-      "type": "registry:component",
-      "title": "OutSystems Sidebar",
-      "description": "A collapsible sidebar navigation",
-      "registryDependencies": [
-        "sidebar",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-sidebar.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-breadcrumbs",
-      "type": "registry:component",
-      "title": "OutSystems Breadcrumbs",
-      "description": "Breadcrumb navigation with OutSystems styling",
-      "registryDependencies": [
-        "breadcrumb",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-breadcrumbs.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-menu",
-      "type": "registry:component",
-      "title": "OutSystems Menu",
-      "description": "Dropdown menu with OutSystems styling",
-      "registryDependencies": [
-        "dropdown-menu",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-menu.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-modal",
-      "type": "registry:component",
-      "title": "OutSystems Modal",
-      "description": "A modal dialog with OutSystems styling",
-      "registryDependencies": [
-        "dialog",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-modal.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-tooltip",
-      "type": "registry:component",
-      "title": "OutSystems Tooltip",
-      "description": "A tooltip component with OutSystems styling",
-      "registryDependencies": [
-        "tooltip",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-tooltip.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-notification",
-      "type": "registry:component",
-      "title": "OutSystems Notification",
-      "description": "Toast notification with OutSystems styling",
-      "registryDependencies": [
-        "sonner",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-notification.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-floating-actions",
-      "type": "registry:component",
-      "title": "OutSystems Floating Actions",
-      "description": "Floating action button with expandable menu",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-floating-actions.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-table",
-      "type": "registry:component",
-      "title": "OutSystems Table",
-      "description": "Data table with OutSystems styling",
-      "registryDependencies": [
-        "table",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-table.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-data-grid",
-      "type": "registry:component",
-      "title": "OutSystems Data Grid",
-      "description": "Advanced data grid with filtering and pagination",
-      "registryDependencies": [
-        "data-table",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-data-grid.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-list",
-      "type": "registry:component",
-      "title": "OutSystems List",
-      "description": "A list component for displaying items",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-list.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-search",
-      "type": "registry:component",
-      "title": "OutSystems Search",
-      "description": "Search input with autocomplete",
-      "registryDependencies": [
-        "input",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-search.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-input",
-      "type": "registry:component",
-      "title": "OutSystems Input",
-      "description": "Text input with OutSystems styling",
-      "registryDependencies": [
-        "input",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-input.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-checkbox",
-      "type": "registry:component",
-      "title": "OutSystems Checkbox",
-      "description": "Checkbox with OutSystems styling",
-      "registryDependencies": [
-        "checkbox",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-checkbox.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-radio",
-      "type": "registry:component",
-      "title": "OutSystems Radio",
-      "description": "Radio button with OutSystems styling",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-radio.tsx",
-          "type": "registry:component"
         }
       ]
     },
@@ -633,10 +142,7 @@
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-button.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-input.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-textarea.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-select.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-checkbox.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-radio.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-card.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-accordion.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
@@ -673,28 +179,6 @@
         },
         {
           "path": "src/app/demo/[name]/blocks/dashboard-page.tsx",
-          "type": "registry:page",
-          "target": "app/page.tsx"
-        }
-      ]
-    },
-    {
-      "name": "store",
-      "type": "registry:block",
-      "title": "Store",
-      "description": "A store application with your brand themed components",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/product-grid.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/app/demo/[name]/blocks/store-page.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
         }
@@ -993,23 +477,6 @@
       ]
     },
     {
-      "name": "calendar",
-      "type": "registry:ui",
-      "title": "Calendar",
-      "description": "A date field component that allows users to enter and edit date.",
-      "registryDependencies": [
-        "calendar",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -1078,23 +545,6 @@
       ]
     },
     {
-      "name": "date-picker",
-      "type": "registry:ui",
-      "title": "Date Picker",
-      "description": "Displays the path to the current resource using a hierarchy of links.",
-      "registryDependencies": [
-        "date-picker",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -1152,6 +602,23 @@
       "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
       "registryDependencies": [
         "menu-bar",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "Allows users to select a single option from a list.",
+      "registryDependencies": [
+        "radio-group",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1293,6 +760,23 @@
       "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "registryDependencies": [
         "tabs",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A textarea component with validation states and size variants.",
+      "registryDependencies": [
+        "textarea",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [

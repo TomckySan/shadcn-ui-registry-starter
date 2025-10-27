@@ -13,14 +13,6 @@ import { login } from "@/app/demo/[name]/components/login";
 import { logo } from "@/app/demo/[name]/components/logo";
 import { productGrid } from "@/app/demo/[name]/components/product-grid";
 import { promo } from "@/app/demo/[name]/components/promo";
-import { osCard } from "@/app/demo/[name]/components/os-card";
-import { osAccordion } from "@/app/demo/[name]/components/os-accordion";
-import { osButton } from "@/app/demo/[name]/components/os-button";
-import { osInput } from "@/app/demo/[name]/components/os-input";
-import { osSelect } from "@/app/demo/[name]/components/os-select";
-import { osCheckbox } from "@/app/demo/[name]/components/os-checkbox";
-import { osRadio } from "@/app/demo/[name]/components/os-radio";
-import { osTextarea } from "@/app/demo/[name]/components/os-textarea";
 
 // ui
 import { accordion } from "@/app/demo/[name]/ui/accordion";
@@ -29,16 +21,15 @@ import { avatar } from "@/app/demo/[name]/ui/avatar";
 import { badge } from "@/app/demo/[name]/ui/badge";
 import { breadcrumb } from "@/app/demo/[name]/ui/breadcrumb";
 import { button } from "@/app/demo/[name]/ui/button";
-import { calendar } from "@/app/demo/[name]/ui/calendar";
 import { card } from "@/app/demo/[name]/ui/card";
 import { chart } from "@/app/demo/[name]/ui/chart";
 import { checkbox } from "@/app/demo/[name]/ui/checkbox";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
-import { datePicker } from "@/app/demo/[name]/ui/date-picker";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
 import { dropdownMenu } from "@/app/demo/[name]/ui/dropdown-menu";
 import { input } from "@/app/demo/[name]/ui/input";
 import { menuBar } from "@/app/demo/[name]/ui/menu-bar";
+import { radio } from "@/app/demo/[name]/ui/radio";
 import { select } from "@/app/demo/[name]/ui/select";
 import { separator } from "@/app/demo/[name]/ui/separator";
 import { skeleton } from "@/app/demo/[name]/ui/skeleton";
@@ -47,6 +38,7 @@ import { sonner } from "@/app/demo/[name]/ui/sonner";
 import { switchComponent } from "@/app/demo/[name]/ui/switch";
 import { table } from "@/app/demo/[name]/ui/table";
 import { tabs } from "@/app/demo/[name]/ui/tabs";
+import { textarea } from "@/app/demo/[name]/ui/textarea";
 import { toggleGroup } from "@/app/demo/[name]/ui/toggle-group";
 import { tooltip } from "@/app/demo/[name]/ui/tooltip";
 
@@ -71,14 +63,6 @@ export const demos: { [name: string]: Demo } = {
   "brand-header": brandHeader,
   "brand-sidebar": brandSidebar,
   "product-grid": productGrid,
-  "os-card": osCard,
-  "os-accordion": osAccordion,
-  "os-button": osButton,
-  "os-input": osInput,
-  "os-select": osSelect,
-  "os-checkbox": osCheckbox,
-  "os-radio": osRadio,
-  "os-textarea": osTextarea,
 
   // ui
   accordion,
@@ -87,16 +71,15 @@ export const demos: { [name: string]: Demo } = {
   badge,
   breadcrumb,
   button,
-  calendar,
   card,
   chart,
   checkbox,
   dialog,
-  "date-picker": datePicker,
   "data-table": dataTable,
   "dropdown-menu": dropdownMenu,
   input,
   "menu-bar": menuBar,
+  radio,
   select,
   separator,
   skeleton,
@@ -105,6 +88,7 @@ export const demos: { [name: string]: Demo } = {
   sonner,
   table,
   tabs,
+  textarea,
   "toggle-group": toggleGroup,
   tooltip,
 };

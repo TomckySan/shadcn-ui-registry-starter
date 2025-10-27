@@ -4,7 +4,7 @@ import * as React from "react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import { cn } from "@/lib/utils";
 
-const OSRadioGroup = React.forwardRef<
+const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
 >(({ className, ...props }, ref) => {
@@ -16,9 +16,9 @@ const OSRadioGroup = React.forwardRef<
     />
   );
 });
-OSRadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
-const OSRadioGroupItem = React.forwardRef<
+const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >(({ className, ...props }, ref) => {
@@ -38,6 +38,6 @@ const OSRadioGroupItem = React.forwardRef<
     </RadioGroupPrimitive.Item>
   );
 });
-OSRadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
+RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
 
-export { OSRadioGroup, OSRadioGroupItem };
+export { RadioGroup, RadioGroupItem };

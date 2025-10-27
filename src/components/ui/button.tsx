@@ -1,59 +1,113 @@
-import { Slot as SlotPrimitive } from "radix-ui";
-import { type VariantProps, cva } from "class-variance-authority";
-import type * as React from "react";
-
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
-);
+/**
+ * OutSystems Button Component
+ *
+ * A button component with OutSystems UI styling including:
+ * - Type variants (Primary, Secondary)
+ * - Semantic colors (Default, Cancel, Error, Success)
+ * - Shape variants (Sharp, Soft, Rounded)
+ * - Size variants (Small, Default, Large)
+ * - Icon support
+ * - Disabled state
+ */
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
-  const Comp = asChild ? SlotPrimitive.Slot : "button";
-
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "size"> {
+  /**
+   * Button variant
+   * @default "primary"
+   */
+  variant?: "primary" | "secondary";
+  /**
+   * Semantic color
+   * @default "default"
+   */
+  semantic?: "default" | "cancel" | "error" | "success";
+  /**
+   * Button shape
+   * @default "soft"
+   */
+  shape?: "sharp" | "soft" | "rounded";
+  /**
+   * Button size
+   * @default "default"
+   */
+  size?: "small" | "default" | "large";
 }
 
-export { Button, buttonVariants };
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      variant = "primary",
+      semantic = "default",
+      shape = "soft",
+      size = "default",
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    // Filter out non-standard props that shouldn't be passed to DOM elements
+    const { asChild, ...buttonProps } = props as any;
+
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          // Base styles
+          "inline-flex items-center justify-center gap-2 font-medium transition-all",
+          "disabled:pointer-events-none disabled:opacity-50",
+          "outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+          "[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+
+          // Variant styles
+          {
+            // Primary variants
+            "bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-600":
+              variant === "primary" && semantic === "default",
+            "bg-gray-500 text-white hover:bg-gray-600 focus-visible:ring-gray-500":
+              variant === "primary" && semantic === "cancel",
+            "bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600":
+              variant === "primary" && semantic === "error",
+            "bg-green-600 text-white hover:bg-green-700 focus-visible:ring-green-600":
+              variant === "primary" && semantic === "success",
+
+            // Secondary variants
+            "border-2 bg-transparent border-blue-600 text-blue-600 hover:bg-blue-50 focus-visible:ring-blue-600":
+              variant === "secondary" && semantic === "default",
+            "border-2 bg-transparent border-gray-500 text-gray-700 hover:bg-gray-50 focus-visible:ring-gray-500":
+              variant === "secondary" && semantic === "cancel",
+            "border-2 bg-transparent border-red-600 text-red-600 hover:bg-red-50 focus-visible:ring-red-600":
+              variant === "secondary" && semantic === "error",
+            "border-2 bg-transparent border-green-600 text-green-600 hover:bg-green-50 focus-visible:ring-green-600":
+              variant === "secondary" && semantic === "success",
+          },
+
+          // Shape styles
+          {
+            "rounded-none": shape === "sharp",
+            "rounded-md": shape === "soft",
+            "rounded-full": shape === "rounded",
+          },
+
+          // Size styles
+          {
+            "h-8 px-3 text-xs": size === "small",
+            "h-10 px-4 text-sm": size === "default",
+            "h-12 px-6 text-base": size === "large",
+          },
+
+          className
+        )}
+        {...buttonProps}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+Button.displayName = "Button";
+
+export { Button };
