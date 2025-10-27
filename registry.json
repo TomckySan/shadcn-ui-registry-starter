@@ -140,11 +140,11 @@
       "title": "Blank",
       "description": "A showcase of all OutSystems UI components",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-button.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-input.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-select.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-card.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/os-accordion.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/button.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/input.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/select.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/card.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/accordion.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
