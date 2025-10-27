@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 /**
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
  * - Size variants (Small, Default, Large)
  * - Icon support
  * - Disabled state
+ * - asChild support for rendering as a different element
  */
 
 export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "size"> {
@@ -34,6 +36,11 @@ export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonE
    * @default "default"
    */
   size?: "small" | "default" | "large";
+  /**
+   * If true, the button will be rendered as a Slot (allows using as a different element)
+   * @default false
+   */
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -44,16 +51,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       semantic = "default",
       shape = "soft",
       size = "default",
+      asChild = false,
       children,
       ...props
     },
     ref
   ) => {
-    // Filter out non-standard props that shouldn't be passed to DOM elements
-    const { asChild, ...buttonProps } = props as any;
+    const Comp = asChild ? Slot : "button";
 
     return (
-      <button
+      <Comp
         ref={ref}
         className={cn(
           // Base styles
@@ -101,10 +108,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
           className
         )}
-        {...buttonProps}
+        {...props}
       >
         {children}
-      </button>
+      </Comp>
     );
   }
 );
