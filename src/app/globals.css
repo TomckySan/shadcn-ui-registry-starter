@@ -165,12 +165,6 @@
   --space-xl: 40px;
   --space-xxl: 48px;
 
-  /* Border Radius */
-  --border-radius-none: 0;
-  --border-radius-soft: 4px;
-  --border-radius-rounded: 100px;
-  --border-radius-circle: 100%;
-
   /* Border Size */
   --border-size-none: 0;
   --border-size-s: 1px;
@@ -228,8 +222,6 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #dee2e6;
   --sidebar-ring: #1068eb;
-
-  --radius: 0.5rem;
 
   /* Typography - Font Family */
   --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -425,8 +417,6 @@
   --sidebar-border: #4f575e;
   --sidebar-ring: #5fa1db;
 
-  --radius: 0.5rem;
-
   /* Typography - Font Family */
   --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -451,12 +441,6 @@
   --font-weight-regular: 400;
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
-
-  /* Border - Border Radius */
-  --border-radius-none: 0px;
-  --border-radius-soft: 4px;
-  --border-radius-rounded: 100px;
-  --border-radius-circle: 100%;
 
   /* Border - Border Size */
   --border-size-none: 0px;
@@ -531,10 +515,12 @@
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
 
+  /* OutSystems UI Border Radius */
+  /* https://outsystemsui.outsystems.com/WebStyleGuidePreview/Border.aspx */
   --radius-sm: 0px;
   --radius-md: 4px;
-  --radius-lg: 100px;
-  --radius-xl: 100%;
+  --radius-lg: 4px;
+  --radius-xl: 100px;
 
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);

@@ -22,7 +22,7 @@ export default function TokensPage() {
           </Link>
         </Button>
 
-        <h1 className="font-bold text-3xl tracking-tight">Design Tokens</h1>
+        <h1 className="font-bold text-3xl tracking-tight">OutSystems UI Design Tokens</h1>
         <p className="mt-1 text-muted-foreground">
           A comprehensive overview of all design tokens used in the OutSystems UI design system
         </p>
@@ -317,15 +317,11 @@ export default function TokensPage() {
 
       {/* OutSystems UI Border Radius */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Border Radius</h2>
-        <p className="mb-6 text-muted-foreground">
-          Border radius scale for different shape variations.
-        </p>
+        <h2 className="mb-4 font-semibold text-xl">Border Radius</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <BorderBlock name="None" className="border-radius-none" type="radius" />
-          <BorderBlock name="Soft" className="border-radius-soft" type="radius" />
-          <BorderBlock name="Rounded" className="border-radius-rounded" type="radius" />
-          <BorderBlock name="Circle" className="border-radius-circle" type="radius" />
+          <BorderBlock name="None" className="rounded-none" type="radius" />
+          <BorderBlock name="Soft" className="rounded-md" type="radius" />
+          <BorderBlock name="Rounded" className="rounded-xl" type="radius" />
         </div>
       </section>
 
