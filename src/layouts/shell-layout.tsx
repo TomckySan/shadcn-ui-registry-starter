@@ -1,13 +1,11 @@
-"use client";
-
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
-import React, { type ReactNode, useState } from "react";
+import React, { type ReactNode } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
-import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
+import { BrandSidebar } from "@/components/brand-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
 import "@/app/globals.css";
 
@@ -31,68 +29,6 @@ export default function ShellLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
-  const osComponentsByCategory = getOutSystemsComponentsByCategory();
-  const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
-
-  const gettingStartedItems = [
-    { name: "/", title: "Home" },
-    { name: "/tokens", title: "Design Tokens" },
-  ];
-
-  const categories: NavigationCategory[] = [
-    {
-      title: "Getting Started",
-      items: gettingStartedItems,
-    },
-    {
-      title: "Blocks",
-      items: blockItems,
-      pathPrefix: "/registry",
-    },
-  ];
-
-  if (uiItems.length > 0) {
-    categories.push({
-      title: "UI",
-      items: uiItems,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.primitives.length > 0) {
-    categories.push({
-      title: "Primitives",
-      items: osComponentsByCategory.primitives.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.layout.length > 0) {
-    categories.push({
-      title: "Layout",
-      items: osComponentsByCategory.layout.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.patterns.length > 0) {
-    categories.push({
-      title: "Patterns",
-      items: osComponentsByCategory.patterns.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.templates.length > 0) {
-    categories.push({
-      title: "Templates",
-      items: osComponentsByCategory.templates.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
   return (
     <html
       lang="en"
@@ -104,27 +40,14 @@ export default function ShellLayout({
       )}
     >
       <body>
-        <div className="flex min-h-screen w-full flex-col">
-          {/* ヘッダ（full-width） */}
-          <BrandHeader onMenuClick={() => setSidebarOpen(true)} />
-
-          {/* メインコンテンツエリア */}
-          <div className="flex flex-1 gap-6 p-6">
-            {/* 左サイド: ナビゲーション */}
-            <aside className="hidden w-52 shrink-0 lg:block">
-              <BrandSidebar
-                categories={categories}
-                open={sidebarOpen}
-                onOpenChange={setSidebarOpen}
-              />
-            </aside>
-
-            {/* 右サイド: メインエリア */}
-            <main className="h-[calc(100vh-8.5rem)] flex-1 overflow-auto">{children}</main>
-          </div>
-
+        <SidebarProvider>
+          <BrandHeader />
+          <BrandSidebar />
+          <main className="mt-16 flex w-full justify-center">
+            <div className="container">{children}</div>
+          </main>
           <Toaster />
-        </div>
+        </SidebarProvider>
       </body>
     </html>
   );

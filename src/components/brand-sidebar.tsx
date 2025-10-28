@@ -20,17 +20,27 @@ export interface NavigationCategory {
 }
 
 interface BrandSidebarProps {
-  categories: NavigationCategory[];
+  categories?: NavigationCategory[];
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }
 
+const DEFAULT_CATEGORIES: NavigationCategory[] = [
+  {
+    title: "Getting Started",
+    items: [
+      { name: "/", title: "Home" },
+    ],
+  },
+];
+
 export function BrandSidebar({ categories, open, onOpenChange }: BrandSidebarProps) {
   const pathname = usePathname();
+  const navigationCategories = categories || DEFAULT_CATEGORIES;
 
   const navigationContent = (
     <div className="space-y-4">
-      {categories.map((category) => {
+      {navigationCategories.map((category) => {
         // itemsが空の場合、カテゴリタイトル自体をリンクとして表示
         if (category.items.length === 0 && category.name) {
           const categoryPath = category.pathPrefix
