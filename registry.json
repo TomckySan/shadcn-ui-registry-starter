@@ -435,14 +435,13 @@
       "title": "Navigation Bar",
       "description": "A flexible navigation component that supports both flat and hierarchical menu structures.",
       "registryDependencies": [
-        "navigation-bar",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
         {
-          "path": "src/layouts/minimal-layout.tsx",
+          "path": "src/components/ui/navigation-bar.tsx",
           "type": "registry:file",
-          "target": "app/layout.tsx"
+          "target": "ui/navigation-bar.tsx"
         }
       ]
     },
