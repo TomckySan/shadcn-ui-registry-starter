@@ -39,7 +39,7 @@ const requests = [
   {
     id: "ID 2421",
     name: "I need to plug in more USB devices in my laptop.",
-    assignedTo: { name: "Demetrius", avatar: "/avatars/demetrius.jpg" },
+    assignedTo: { name: "Demetrius", avatar: null },
     createdOn: "2018-06-07",
   },
   {
@@ -51,7 +51,7 @@ const requests = [
   {
     id: "ID 2418",
     name: "I need a new chair, since mine is too small for me.",
-    assignedTo: { name: "Derek", avatar: "/avatars/derek.jpg" },
+    assignedTo: { name: "Derek", avatar: null },
     createdOn: "2018-06-03",
   },
   {
@@ -63,25 +63,25 @@ const requests = [
   {
     id: "ID 2416",
     name: "I need a video session for a meeting next week.",
-    assignedTo: { name: "David", avatar: "/avatars/david.jpg" },
+    assignedTo: { name: "David", avatar: null },
     createdOn: "2018-05-30",
   },
   {
     id: "ID 2415",
     name: "People need coffee in Floor 2, and the machine is broken.",
-    assignedTo: { name: "Darlene", avatar: "/avatars/darlene.jpg" },
+    assignedTo: { name: "Darlene", avatar: null },
     createdOn: "2018-05-28",
   },
   {
     id: "ID 2413",
     name: "The armrest of my chair broke, can you fix it?",
-    assignedTo: { name: "Daniel", avatar: "/avatars/daniel.jpg" },
+    assignedTo: { name: "Daniel", avatar: null },
     createdOn: "2018-05-26",
   },
   {
     id: "ID 2414",
     name: "I can only turn down the volume using the keyboard.",
-    assignedTo: { name: "Demetrius", avatar: "/avatars/demetrius.jpg" },
+    assignedTo: { name: "Demetrius", avatar: null },
     createdOn: "2018-05-26",
   },
   {
