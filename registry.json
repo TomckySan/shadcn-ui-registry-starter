@@ -35,7 +35,6 @@
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/select.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/card.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/accordion.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/navigation-bar.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
@@ -426,22 +425,6 @@
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
-      "name": "navigation-bar",
-      "type": "registry:ui",
-      "title": "Navigation Bar",
-      "description": "A flexible navigation component that supports both flat and hierarchical menu structures.",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/navigation-bar.tsx",
-          "type": "registry:file",
-          "target": "ui/navigation-bar.tsx"
         }
       ]
     },

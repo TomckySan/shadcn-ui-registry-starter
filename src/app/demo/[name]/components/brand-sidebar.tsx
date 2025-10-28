@@ -1,7 +1,6 @@
 "use client";
 
-import { BrandSidebar } from "@/components/brand-sidebar";
-import type { NavigationCategory } from "@/components/ui/navigation-bar";
+import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
 const Demo = () => {

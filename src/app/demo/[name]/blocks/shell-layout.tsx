@@ -3,8 +3,7 @@
 import React, { type ReactNode, useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
-import { BrandSidebar } from "@/components/brand-sidebar";
-import type { NavigationCategory } from "@/components/ui/navigation-bar";
+import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 

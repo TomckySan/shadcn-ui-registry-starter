@@ -9,7 +9,6 @@ import { brandSidebar } from "@/app/demo/[name]/components/brand-sidebar";
 import { hero } from "@/app/demo/[name]/components/hero";
 import { login } from "@/app/demo/[name]/components/login";
 import { logo } from "@/app/demo/[name]/components/logo";
-import { navigationBar } from "@/app/demo/[name]/components/navigation-bar";
 import { promo } from "@/app/demo/[name]/components/promo";
 
 // ui
@@ -58,7 +57,6 @@ export const demos: { [name: string]: Demo } = {
   logo,
   "brand-header": brandHeader,
   "brand-sidebar": brandSidebar,
-  "navigation-bar": navigationBar,
 
   // ui
   accordion,
