@@ -4,7 +4,7 @@ import { NavigationBar, type NavigationCategory } from "@/components/registry/na
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
-const blockItems = getBlocks().filter((item) => item.name !== "blank");
+const blockItems = getBlocks();
 const osComponentsByCategory = getOutSystemsComponentsByCategory();
 const uiItems = getUIPrimitives();
 

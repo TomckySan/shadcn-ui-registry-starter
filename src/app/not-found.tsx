@@ -1,20 +1,25 @@
 import Link from "next/link";
 
-import {
-  MobileSidebarTrigger,
-  RegistrySidebar,
-} from "@/components/registry/registry-sidebar";
+import { RegistryHeader } from "@/components/registry/registry-header";
+import { RegistrySidebar } from "@/components/registry/registry-sidebar";
 import { Button } from "@/components/ui/button";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function NotFound() {
   return (
-    <SidebarProvider>
-      <MobileSidebarTrigger />
-      <RegistrySidebar />
-      <main className="flex w-full justify-center">
-        <div className="flex min-h-screen w-full flex-col items-center justify-center text-center">
+    <div className="flex min-h-screen w-full flex-col">
+      {/* ヘッダ（full-width） */}
+      <RegistryHeader />
+
+      {/* メインコンテンツエリア */}
+      <div className="flex flex-1 gap-6 p-6">
+        {/* 左サイド: ナビゲーション */}
+        <aside className="w-64 shrink-0">
+          <RegistrySidebar />
+        </aside>
+
+        {/* 右サイド: 404メッセージ */}
+        <main className="flex flex-1 flex-col items-center justify-center text-center">
           <h1 className="font-bold text-6xl text-muted-foreground tracking-tight md:text-8xl">
             404
           </h1>
@@ -29,9 +34,10 @@ export default function NotFound() {
               <Link href="/r/registry.json">View Registry</Link>
             </Button>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
+
       <Toaster />
-    </SidebarProvider>
+    </div>
   );
 }

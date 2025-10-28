@@ -1,7 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 
 // blocks
-import { blank } from "@/app/demo/[name]/blocks/blank";
 import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 
 // components
@@ -49,7 +48,6 @@ interface Demo {
 
 export const demos: { [name: string]: Demo } = {
   // blocks
-  blank,
   dashboard,
 
   // components
