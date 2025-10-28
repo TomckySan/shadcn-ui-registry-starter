@@ -229,7 +229,7 @@
   --sidebar-border: #dee2e6;
   --sidebar-ring: #1068eb;
 
-  --radius: 0.5rem;
+  /* --radius: 0.5rem; */
 
   /* Typography - Font Family */
   --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -425,7 +425,7 @@
   --sidebar-border: #4f575e;
   --sidebar-ring: #5fa1db;
 
-  --radius: 0.5rem;
+  /* --radius: 0.5rem; */
 
   /* Typography - Font Family */
   --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -531,10 +531,10 @@
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
 
-  --radius-sm: calc(var(--radius) - 4px);
+  /* --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 4px); */
 
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
