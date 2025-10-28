@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -113,6 +114,16 @@ export default function DashboardPage() {
 
         {/* 右サイド: メインエリア */}
         <main className="h-[calc(100vh-8.5rem)] flex-1 space-y-6 overflow-auto">
+
+        {/* アラート通知 */}
+        <div className="space-y-4">
+          <Alert variant="info">
+            <AlertTitle>This is an alert-info</AlertTitle>
+            <AlertDescription>
+              System maintenance is scheduled for tonight at 2:00 AM.
+            </AlertDescription>
+          </Alert>
+        </div>
 
         {/* 統計カード（3つ横並び） */}
         <div className="grid grid-cols-3 gap-4">

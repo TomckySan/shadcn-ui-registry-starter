@@ -1,5 +1,6 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import type * as React from "react";
+import { AlertCircle, Info, CheckCircle, AlertTriangle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -8,29 +9,43 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card text-card-foreground",
-        destructive:
-          "text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
+        error: "background-error text-white border-error [&>svg]:text-white *:data-[slot=alert-description]:text-white/90",
+        info: "background-info text-white border-info [&>svg]:text-white *:data-[slot=alert-description]:text-white/90",
+        success: "background-success text-white border-success [&>svg]:text-white *:data-[slot=alert-description]:text-white/90",
+        warning: "background-warning text-black [&>svg]:text-black *:data-[slot=alert-description]:text-black/90",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "info",
     },
   },
 );
 
+const variantIcons = {
+  error: AlertCircle,
+  info: Info,
+  success: CheckCircle,
+  warning: AlertTriangle,
+} as const;
+
 function Alert({
   className,
-  variant,
+  variant = "info",
+  children,
   ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof alertVariants>) {
+  const Icon = variantIcons[variant as keyof typeof variantIcons];
+
   return (
     <div
       data-slot="alert"
       role="alert"
       className={cn(alertVariants({ variant }), className)}
       {...props}
-    />
+    >
+      {Icon && <Icon className="size-4" />}
+      {children}
+    </div>
   );
 }
 

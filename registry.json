@@ -48,6 +48,11 @@
           "target": "components/ui/accordion.tsx"
         },
         {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:file",
+          "target": "components/ui/alert.tsx"
+        },
+        {
           "path": "src/components/ui/button.tsx",
           "type": "registry:file",
           "target": "components/ui/button.tsx"

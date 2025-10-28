@@ -886,4 +886,26 @@
   .shadow-md { box-shadow: var(--shadow-md); }
   .shadow-lg { box-shadow: var(--shadow-lg); }
   .shadow-xl { box-shadow: var(--shadow-xl); }
+
+  /* -- OutSystems UI Semantic Palette -- */
+  .background-info { background-color: #017aad; }
+  .background-info-light { background-color: #e5f5fc; }
+  .text-info { background-color: #017aad; }
+  .text-info-light { background-color: #e5f5fc; }
+
+  .background-success { background-color: #29823b; }
+  .background-success-light { background-color: #eaf3eb; }
+  .text-success { color: #29823b; }
+  .text-success-light { color: #eaf3eb; }
+
+  .background-warning { background-color: #e9a100; }
+  .background-warning-light { background-color: #fdf6e5; }
+  .text-warning { color: #e9a100; }
+  .text-warning-light { color: #fdf6e5; }
+
+  .background-error { background-color: #dc2020; }
+  .background-error-light { background-color: #fceaea; }
+  .text-error { color: #dc2020; }
+  .text-error-light { color: #fceaea; }
+  /* -- End OutSystems UI Semantic Palette -- */
 }
