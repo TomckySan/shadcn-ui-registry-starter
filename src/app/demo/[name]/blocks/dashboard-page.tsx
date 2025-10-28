@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar } from "@/components/brand-sidebar";
 import type { NavigationCategory } from "@/components/registry/navigation-bar";
@@ -92,16 +94,22 @@ const requests = [
 ];
 
 export default function DashboardPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       {/* ヘッダ（full-width） */}
-      <BrandHeader />
+      <BrandHeader onMenuClick={() => setSidebarOpen(true)} />
 
       {/* メインコンテンツエリア */}
       <div className="flex flex-1 gap-6 p-6">
         {/* 左サイド: ナビゲーション */}
-        <aside className="w-64 shrink-0">
-          <BrandSidebar categories={menuItems} />
+        <aside className="hidden w-52 shrink-0 lg:block">
+          <BrandSidebar
+            categories={menuItems}
+            open={sidebarOpen}
+            onOpenChange={setSidebarOpen}
+          />
         </aside>
 
         {/* 右サイド: メインエリア */}

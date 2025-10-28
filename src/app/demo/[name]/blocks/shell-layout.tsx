@@ -1,6 +1,6 @@
 "use client";
 
-import React, { type ReactNode } from "react";
+import React, { type ReactNode, useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar } from "@/components/brand-sidebar";
@@ -13,9 +13,10 @@ export default function ShellLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const blockItems = getBlocks();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
   const osComponentsByCategory = getOutSystemsComponentsByCategory();
-  const uiItems = getUIPrimitives();
+  const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
 
   const gettingStartedItems = [
     { name: "/", title: "Home" },
@@ -28,7 +29,7 @@ export default function ShellLayout({
       items: gettingStartedItems,
     },
     {
-      title: "Layouts",
+      title: "Blocks",
       items: blockItems,
       pathPrefix: "/registry",
     },
@@ -45,7 +46,7 @@ export default function ShellLayout({
   if (osComponentsByCategory.primitives.length > 0) {
     categories.push({
       title: "Primitives",
-      items: osComponentsByCategory.primitives,
+      items: osComponentsByCategory.primitives.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -53,7 +54,7 @@ export default function ShellLayout({
   if (osComponentsByCategory.layout.length > 0) {
     categories.push({
       title: "Layout",
-      items: osComponentsByCategory.layout,
+      items: osComponentsByCategory.layout.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -61,7 +62,7 @@ export default function ShellLayout({
   if (osComponentsByCategory.patterns.length > 0) {
     categories.push({
       title: "Patterns",
-      items: osComponentsByCategory.patterns,
+      items: osComponentsByCategory.patterns.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -69,7 +70,7 @@ export default function ShellLayout({
   if (osComponentsByCategory.templates.length > 0) {
     categories.push({
       title: "Templates",
-      items: osComponentsByCategory.templates,
+      items: osComponentsByCategory.templates.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -77,13 +78,17 @@ export default function ShellLayout({
   return (
     <div className="flex min-h-screen w-full flex-col">
       {/* ヘッダ（full-width） */}
-      <BrandHeader />
+      <BrandHeader onMenuClick={() => setSidebarOpen(true)} />
 
       {/* メインコンテンツエリア */}
       <div className="flex flex-1 gap-6 p-6">
         {/* 左サイド: ナビゲーション */}
-        <aside className="w-64 shrink-0">
-          <BrandSidebar categories={categories} />
+        <aside className="hidden w-52 shrink-0 lg:block">
+          <BrandSidebar
+            categories={categories}
+            open={sidebarOpen}
+            onOpenChange={setSidebarOpen}
+          />
         </aside>
 
         {/* 右サイド: メインエリア */}

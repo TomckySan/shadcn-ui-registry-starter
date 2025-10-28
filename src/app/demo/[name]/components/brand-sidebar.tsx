@@ -5,9 +5,9 @@ import type { NavigationCategory } from "@/components/registry/navigation-bar";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
 const Demo = () => {
-  const blockItems = getBlocks();
+  const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
   const osComponentsByCategory = getOutSystemsComponentsByCategory();
-  const uiItems = getUIPrimitives();
+  const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
 
   const gettingStartedItems = [
     { name: "/", title: "Home" },
@@ -20,7 +20,7 @@ const Demo = () => {
       items: gettingStartedItems,
     },
     {
-      title: "Layouts",
+      title: "Blocks",
       items: blockItems,
       pathPrefix: "/registry",
     },
@@ -37,7 +37,7 @@ const Demo = () => {
   if (osComponentsByCategory.primitives.length > 0) {
     categories.push({
       title: "Primitives",
-      items: osComponentsByCategory.primitives,
+      items: osComponentsByCategory.primitives.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -45,7 +45,7 @@ const Demo = () => {
   if (osComponentsByCategory.layout.length > 0) {
     categories.push({
       title: "Layout",
-      items: osComponentsByCategory.layout,
+      items: osComponentsByCategory.layout.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -53,7 +53,7 @@ const Demo = () => {
   if (osComponentsByCategory.patterns.length > 0) {
     categories.push({
       title: "Patterns",
-      items: osComponentsByCategory.patterns,
+      items: osComponentsByCategory.patterns.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
@@ -61,7 +61,7 @@ const Demo = () => {
   if (osComponentsByCategory.templates.length > 0) {
     categories.push({
       title: "Templates",
-      items: osComponentsByCategory.templates,
+      items: osComponentsByCategory.templates.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }
