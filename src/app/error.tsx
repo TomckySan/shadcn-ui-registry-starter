@@ -3,10 +3,12 @@
 import { useEffect } from "react";
 import Link from "next/link";
 
-import { RegistryHeader } from "@/components/registry/registry-header";
-import { RegistrySidebar } from "@/components/registry/registry-sidebar";
+import { BrandHeader } from "@/components/brand-header";
+import { BrandSidebar } from "@/components/brand-sidebar";
+import type { NavigationCategory } from "@/components/registry/navigation-bar";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
+import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
 export default function ErrorPage({
   error,
@@ -19,20 +21,81 @@ export default function ErrorPage({
     console.error(error);
   }, [error]);
 
+  const blockItems = getBlocks();
+  const osComponentsByCategory = getOutSystemsComponentsByCategory();
+  const uiItems = getUIPrimitives();
+
+  const gettingStartedItems = [
+    { name: "/", title: "Home" },
+    { name: "/tokens", title: "Design Tokens" },
+  ];
+
+  const categories: NavigationCategory[] = [
+    {
+      title: "Getting Started",
+      items: gettingStartedItems,
+    },
+    {
+      title: "Layouts",
+      items: blockItems,
+      pathPrefix: "/registry",
+    },
+  ];
+
+  if (uiItems.length > 0) {
+    categories.push({
+      title: "UI",
+      items: uiItems,
+      pathPrefix: "/registry",
+    });
+  }
+
+  if (osComponentsByCategory.primitives.length > 0) {
+    categories.push({
+      title: "Primitives",
+      items: osComponentsByCategory.primitives,
+      pathPrefix: "/registry",
+    });
+  }
+
+  if (osComponentsByCategory.layout.length > 0) {
+    categories.push({
+      title: "Layout",
+      items: osComponentsByCategory.layout,
+      pathPrefix: "/registry",
+    });
+  }
+
+  if (osComponentsByCategory.patterns.length > 0) {
+    categories.push({
+      title: "Patterns",
+      items: osComponentsByCategory.patterns,
+      pathPrefix: "/registry",
+    });
+  }
+
+  if (osComponentsByCategory.templates.length > 0) {
+    categories.push({
+      title: "Templates",
+      items: osComponentsByCategory.templates,
+      pathPrefix: "/registry",
+    });
+  }
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       {/* ヘッダ（full-width） */}
-      <RegistryHeader />
+      <BrandHeader title="OutSystems UI Registry" showUser={false} />
 
       {/* メインコンテンツエリア */}
       <div className="flex flex-1 gap-6 p-6">
         {/* 左サイド: ナビゲーション */}
         <aside className="w-64 shrink-0">
-          <RegistrySidebar />
+          <BrandSidebar categories={categories} />
         </aside>
 
         {/* 右サイド: エラーメッセージ */}
-        <main className="flex flex-1 flex-col items-center justify-center text-center">
+        <main className="flex h-[calc(100vh-8.5rem)] flex-1 flex-col items-center justify-center overflow-auto text-center">
           <h1 className="font-bold text-6xl text-muted-foreground tracking-tight md:text-8xl">
             500
           </h1>

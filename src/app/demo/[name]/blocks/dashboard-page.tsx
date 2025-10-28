@@ -1,7 +1,8 @@
 "use client";
 
-import { DashboardHeader } from "./dashboard-header";
-import { NavigationBar, type NavigationCategory } from "@/components/registry/navigation-bar";
+import { BrandHeader } from "@/components/brand-header";
+import { BrandSidebar } from "@/components/brand-sidebar";
+import type { NavigationCategory } from "@/components/registry/navigation-bar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -9,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Table,
   TableBody,
@@ -22,14 +22,9 @@ import { Check, Clock, X } from "lucide-react";
 
 // メニュー項目
 const menuItems: NavigationCategory[] = [
-  {
-    title: "Menu",
-    items: [
-      { name: "#dashboard", title: "Dashboard" },
-      { name: "#requests", title: "Requests" },
-      { name: "#settings", title: "Settings" },
-    ],
-  },
+  { title: "Dashboard", name: "#dashboard", items: [] },
+  { title: "Requests", name: "#requests", items: [] },
+  { title: "Settings", name: "#settings", items: [] },
 ];
 
 // モックデータ
@@ -100,23 +95,17 @@ export default function DashboardPage() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       {/* ヘッダ（full-width） */}
-      <DashboardHeader />
+      <BrandHeader />
 
       {/* メインコンテンツエリア */}
       <div className="flex flex-1 gap-6 p-6">
         {/* 左サイド: ナビゲーション */}
         <aside className="w-64 shrink-0">
-          <div className="sticky top-0 h-[calc(100vh-8.5rem)] overflow-hidden">
-            <ScrollArea className="h-full">
-              <div className="py-4">
-                <NavigationBar categories={menuItems} />
-              </div>
-            </ScrollArea>
-          </div>
+          <BrandSidebar categories={menuItems} />
         </aside>
 
         {/* 右サイド: メインエリア */}
-        <main className="flex-1 space-y-6">
+        <main className="h-[calc(100vh-8.5rem)] flex-1 space-y-6 overflow-auto">
 
         {/* 統計カード（3つ横並び） */}
         <div className="grid grid-cols-3 gap-4">

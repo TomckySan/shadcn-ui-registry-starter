@@ -12,6 +12,7 @@ export interface NavigationItem {
 
 export interface NavigationCategory {
   title: string;
+  name?: string;
   items: NavigationItem[];
   pathPrefix?: string;
 }
@@ -25,36 +26,62 @@ export function NavigationBar({ categories }: NavigationBarProps) {
 
   return (
     <div className="space-y-4">
-      {categories.map((category) => (
-        <div key={category.title}>
-          <div className="mb-2 text-sm font-semibold text-muted-foreground">
-            {category.title}
-          </div>
-          <div className="space-y-1">
-            {category.items.map((item) => {
-              const itemPath = category.pathPrefix
-                ? `${category.pathPrefix}/${item.name}`
-                : item.name;
-              const isActive = pathname === itemPath;
+      {categories.map((category) => {
+        // itemsが空の場合、カテゴリタイトル自体をリンクとして表示
+        if (category.items.length === 0 && category.name) {
+          const categoryPath = category.pathPrefix
+            ? `${category.pathPrefix}/${category.name}`
+            : category.name;
+          const isActive = pathname === categoryPath;
 
-              return (
-                <Link
-                  key={item.name}
-                  href={itemPath}
-                  className={cn(
-                    "block pl-4 text-sm hover:text-blue-600 hover:underline",
-                    isActive
-                      ? "font-medium text-blue-600"
-                      : "text-foreground"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              );
-            })}
+          return (
+            <Link
+              key={category.title}
+              href={categoryPath}
+              className={cn(
+                "block text-sm hover:text-blue-600 hover:underline",
+                isActive
+                  ? "font-medium text-blue-600"
+                  : "text-foreground"
+              )}
+            >
+              {category.title}
+            </Link>
+          );
+        }
+
+        // itemsがある場合は階層表示
+        return (
+          <div key={category.title}>
+            <div className="mb-2 text-sm font-semibold text-muted-foreground">
+              {category.title}
+            </div>
+            <div className="space-y-1">
+              {category.items.map((item) => {
+                const itemPath = category.pathPrefix
+                  ? `${category.pathPrefix}/${item.name}`
+                  : item.name;
+                const isActive = pathname === itemPath;
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={itemPath}
+                    className={cn(
+                      "block pl-4 text-sm hover:text-blue-600 hover:underline",
+                      isActive
+                        ? "font-medium text-blue-600"
+                        : "text-foreground"
+                    )}
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
