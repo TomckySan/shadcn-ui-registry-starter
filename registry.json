@@ -44,7 +44,7 @@
         {
           "path": "src/components/ui/input.tsx",
           "type": "registry:file",
-          "target": "ui/input.tsx"
+          "target": "components/ui/input.tsx"
         },
         {
           "path": "src/layouts/shell-layout.tsx",
