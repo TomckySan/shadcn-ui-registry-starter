@@ -35,6 +35,7 @@
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/select.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/card.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/accordion.json",
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/navigation-bar.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
@@ -202,11 +203,6 @@
         {
           "path": "src/components/registry/navigation-bar.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
         }
       ]
     },
