@@ -1,6 +1,6 @@
 "use client";
 
-import { NavigationBar, type NavigationCategory } from "@/components/registry/navigation-bar";
+import { NavigationBar, type NavigationCategory } from "@/components/ui/navigation-bar";
 
 // フラットなメニュー（親項目のみ）
 const flatMenuItems: NavigationCategory[] = [

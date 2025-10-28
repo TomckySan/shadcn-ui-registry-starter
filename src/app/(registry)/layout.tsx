@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar } from "@/components/brand-sidebar";
-import type { NavigationCategory } from "@/components/registry/navigation-bar";
+import type { NavigationCategory } from "@/components/ui/navigation-bar";
 import { Toaster } from "@/components/ui/sonner";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 

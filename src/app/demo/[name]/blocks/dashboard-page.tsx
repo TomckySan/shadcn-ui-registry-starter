@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar } from "@/components/brand-sidebar";
-import type { NavigationCategory } from "@/components/registry/navigation-bar";
+import type { NavigationCategory } from "@/components/ui/navigation-bar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,

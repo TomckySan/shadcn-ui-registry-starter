@@ -1,6 +1,6 @@
 "use client";
 
-import { NavigationBar, type NavigationCategory } from "@/components/registry/navigation-bar";
+import { NavigationBar, type NavigationCategory } from "@/components/ui/navigation-bar";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
