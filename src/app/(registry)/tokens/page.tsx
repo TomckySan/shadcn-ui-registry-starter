@@ -1,10 +1,7 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import type React from "react";
 
-import { Button } from "@/components/ui/button";
 import { ColorBlock } from "./color-block";
 import { TypographyBlock } from "./typography-block";
 import { BorderBlock } from "./border-block";
@@ -13,15 +10,8 @@ import { ShadowBlock } from "./shadow-block";
 
 export default function TokensPage() {
   return (
-    <div className="container p-5 md:p-10">
+    <div className="space-y-6">
       <div className="mb-8">
-        <Button variant="secondary" size="small" asChild className="mb-4">
-          <Link href="/">
-            <ArrowLeft className="mr-2 size-4" />
-            Back to Home
-          </Link>
-        </Button>
-
         <h1 className="font-bold text-3xl tracking-tight">OutSystems UI Design Tokens</h1>
         <p className="mt-1 text-muted-foreground">
           A comprehensive overview of all design tokens used in the OutSystems UI design system

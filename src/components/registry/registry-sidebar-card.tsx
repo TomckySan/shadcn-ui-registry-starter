@@ -1,6 +1,7 @@
 "use client";
 
 import { NavigationBar, type NavigationCategory } from "@/components/registry/navigation-bar";
+import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
 
@@ -13,7 +14,7 @@ const gettingStartedItems = [
   { name: "/tokens", title: "Design Tokens" },
 ];
 
-export function RegistrySidebar() {
+export function RegistrySidebarCard() {
   const categories: NavigationCategory[] = [
     {
       title: "Getting Started",
@@ -67,12 +68,14 @@ export function RegistrySidebar() {
   }
 
   return (
-    <div className="sticky top-0 h-[calc(100vh-8.5rem)] overflow-hidden">
-      <ScrollArea className="h-full">
-        <div className="py-4">
-          <NavigationBar categories={categories} />
-        </div>
-      </ScrollArea>
-    </div>
+    <Card className="sticky top-0 h-[calc(100vh-8.5rem)] overflow-hidden">
+      <CardContent className="h-full p-0">
+        <ScrollArea className="h-full">
+          <div className="p-4">
+            <NavigationBar categories={categories} />
+          </div>
+        </ScrollArea>
+      </CardContent>
+    </Card>
   );
 }

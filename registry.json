@@ -25,147 +25,17 @@
       ]
     },
     {
-      "name": "os-switch",
-      "type": "registry:component",
-      "title": "OutSystems Switch",
-      "description": "Toggle switch with OutSystems styling",
-      "registryDependencies": [
-        "switch",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-switch.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-dropdown",
-      "type": "registry:component",
-      "title": "OutSystems Dropdown",
-      "description": "Dropdown select with OutSystems styling",
-      "registryDependencies": [
-        "select",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-dropdown.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-progress-bar",
-      "type": "registry:component",
-      "title": "OutSystems Progress Bar",
-      "description": "Progress indicator with OutSystems styling",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-progress-bar.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-progress-circle",
-      "type": "registry:component",
-      "title": "OutSystems Progress Circle",
-      "description": "Circular progress indicator",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-progress-circle.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-badge",
-      "type": "registry:component",
-      "title": "OutSystems Badge",
-      "description": "Badge component with OutSystems styling",
-      "registryDependencies": [
-        "badge",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-badge.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-alert",
-      "type": "registry:component",
-      "title": "OutSystems Alert",
-      "description": "Alert message with OutSystems styling",
-      "registryDependencies": [
-        "alert",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-alert.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "os-skeleton",
-      "type": "registry:component",
-      "title": "OutSystems Skeleton",
-      "description": "Loading skeleton with OutSystems styling",
-      "registryDependencies": [
-        "skeleton",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/os-skeleton.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "blank",
+      "name": "dashboard",
       "type": "registry:block",
-      "title": "Blank",
-      "description": "A showcase of all OutSystems UI components",
+      "title": "Dashboard",
+      "description": "A dashboard application with your brand themed components",
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/button.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/input.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/select.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/card.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/accordion.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/app/demo/[name]/blocks/blank-page.tsx",
-          "type": "registry:page",
-          "target": "app/page.tsx"
-        }
-      ]
-    },
-    {
-      "name": "dashboard",
-      "type": "registry:block",
-      "title": "Dashboard",
-      "description": "A dashboard application with your brand themed components",
-      "registryDependencies": [
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-sidebar.json",
