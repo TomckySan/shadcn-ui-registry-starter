@@ -12,7 +12,7 @@ export default function TokensPage() {
   return (
     <div className="space-y-6">
       <div className="mb-8">
-        <h1 className="font-bold text-3xl tracking-tight">OutSystems UI Design Tokens</h1>
+        <h1 className="font-bold text-3xl tracking-tight">Design Tokens</h1>
         <p className="mt-1 text-muted-foreground">
           A comprehensive overview of all design tokens used in the OutSystems UI design system
         </p>
@@ -20,7 +20,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Brand Colors */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Brand Colors</h2>
+        <h2 className="mb-4 font-semibold text-xl">Brand Colors</h2>
         <p className="mb-6 text-muted-foreground">
           The primary brand colors that define the OutSystems UI identity.
         </p>
@@ -34,7 +34,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Extended Palette */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Extended Palette</h2>
+        <h2 className="mb-4 font-semibold text-xl">Extended Palette</h2>
         <p className="mb-6 text-muted-foreground">
           A comprehensive color palette with 12 color families, each with 7 shades.
         </p>
@@ -210,7 +210,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Neutral Palette */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Neutral Palette</h2>
+        <h2 className="mb-4 font-semibold text-xl">Neutral Palette</h2>
         <p className="mb-6 text-muted-foreground">
           A 11-level neutral color scale from white to black.
         </p>
@@ -231,7 +231,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Semantic Palette */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Semantic Colors</h2>
+        <h2 className="mb-4 font-semibold text-xl">Semantic Colors</h2>
         <p className="mb-6 text-muted-foreground">
           Colors used to convey meaning and provide feedback to users.
         </p>
@@ -249,7 +249,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Typography - Font Family */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Typography (Font Family)</h2>
+        <h2 className="mb-4 font-semibold text-xl">Typography (Font Family)</h2>
         <p className="mb-6 text-muted-foreground">
           System font stack for optimal performance and native look across platforms.
         </p>
@@ -273,7 +273,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Typography - Font Sizes */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Typography (Font Sizes)</h2>
+        <h2 className="mb-4 font-semibold text-xl">Typography (Font Sizes)</h2>
         <p className="mb-6 text-muted-foreground">
           Responsive font size scale for different text hierarchies.
         </p>
@@ -293,7 +293,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Typography - Font Weights */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Typography (Font Weights)</h2>
+        <h2 className="mb-4 font-semibold text-xl">Typography (Font Weights)</h2>
         <p className="mb-6 text-muted-foreground">
           Font weight variations for emphasis and hierarchy.
         </p>
@@ -317,7 +317,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Border Size */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Border Size</h2>
+        <h2 className="mb-4 font-semibold text-xl">Border Size</h2>
         <p className="mb-6 text-muted-foreground">
           Border width scale for different emphasis levels.
         </p>
@@ -331,7 +331,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Spacing */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Spacing Scale</h2>
+        <h2 className="mb-4 font-semibold text-xl">Spacing Scale</h2>
         <p className="mb-6 text-muted-foreground">
           8px-based spacing scale for consistent layout and positioning.
         </p>
@@ -349,7 +349,7 @@ export default function TokensPage() {
 
       {/* OutSystems UI Shadow */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">OutSystems UI - Shadow Scale</h2>
+        <h2 className="mb-4 font-semibold text-xl">Shadow Scale</h2>
         <p className="mb-6 text-muted-foreground">
           Elevation levels for creating depth and hierarchy.
         </p>

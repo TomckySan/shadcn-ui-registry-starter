@@ -19,7 +19,7 @@ export default function Home() {
       <div className="mb-8">
         <div className="space-y-2">
           <h1 className="font-bold text-3xl tracking-tight md:text-4xl">
-            Registry
+            OutSystems UI Registry
           </h1>
           <p className="text-muted-foreground">
             Distribute your design system tokens, custom components, hooks,
@@ -28,6 +28,7 @@ export default function Home() {
         </div>
       </div>
 
+{/*
       <Card className="mb-4 shadow-none">
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-between">
@@ -60,8 +61,9 @@ export default function Home() {
           </div>
         </CardContent>
       </Card>
+*/}
 
-
+{/*
       <div className="mb-4 rounded-lg border bg-card p-6">
         <div className="flex flex-col gap-2">
           <h2 className="font-semibold text-xl">MCP</h2>
@@ -82,35 +84,21 @@ export default function Home() {
           <MCPTabs rootUrl={process.env.VERCEL_PROJECT_PRODUCTION_URL ?? ""} />
         </div>
       </div>
+*/}
 
       <div className="rounded-lg border bg-card p-6">
         <div className="flex flex-col gap-2">
           <h2 className="font-semibold text-xl">About</h2>
           <p className="text-muted-foreground">
-            This registry serves as a central repository for all UI components
-            and blocks used in your applications. It helps maintain consistency
-            across your products and speeds up development by providing
-            ready-to-use components. Each component and block is documented with
-            examples. You can browse components by category, search for specific
-            components, and view examples of how they are used in different
-            contexts.
+            このレジストリは、<a href="https://outsystemsui.outsystems.com/" className="underline" target="_blank" rel="noreferrer">OutSystems UI</a>をベースとしたコンポーネントを提供しています。<br />
+            各コンポーネントとブロックには例とドキュメントが含まれており、カテゴリー別にコンポーネントを閲覧できます。<br />
           </p>
           <p className="mt-2 text-muted-foreground">
-            To get begin, start with a block{" "}
-            <span className="italic">
-              (like the{" "}
-              <a href="/registry/blank" className="underline">
-                blank block
-              </a>
-              )
-            </span>{" "}
-            and click the <span className="font-bold">Open in v0</span> button.
-            You can also open individual UI primitives or components in v0 if
-            you want a smaller or more specific starting point.
+            使い始めるには <a href="/registry/dashboard" className="underline">Dashboard Block</a> ページを開き、<span className="font-bold">Open in v0</span>ボタンをクリックしてください。<br />
           </p>
 
           <p className="mt-4 text-[#1B1F23] dark:text-white">
-            <a href="https://github.com/vercel/registry-starter">
+            <a href="/#">
               <svg
                 viewBox="0 0 1024 1024"
                 xmlns="http://www.w3.org/2000/svg"
