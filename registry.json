@@ -30,7 +30,6 @@
       "title": "Dashboard",
       "description": "A dashboard application with your brand themed components",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-sidebar.json",
