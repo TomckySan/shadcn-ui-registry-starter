@@ -86,7 +86,6 @@
       "description": "A styled, simple, reusable header",
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/logo.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
@@ -130,8 +129,7 @@
       "registryDependencies": [
         "badge",
         "button",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/logo.json"
+        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
         {
