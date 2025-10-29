@@ -82,7 +82,7 @@
     {
       "name": "brand-header",
       "type": "registry:component",
-      "title": "Brand Header",
+      "title": "Header",
       "description": "A styled, simple, reusable header",
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
@@ -104,7 +104,7 @@
     {
       "name": "brand-sidebar",
       "type": "registry:component",
-      "title": "Brand Sidebar",
+      "title": "Sidebar",
       "description": "A styled, simple, reusable sidebar",
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
@@ -136,69 +136,6 @@
       "files": [
         {
           "path": "src/components/login.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
-      "name": "logo",
-      "type": "registry:component",
-      "title": "Brand Logo",
-      "description": "A styled, simple, reusable logo",
-      "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/logo.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hero",
-      "type": "registry:component",
-      "title": "Hero",
-      "description": "Attention-grabbing section for the top of your landing pages.",
-      "registryDependencies": [
-        "badge",
-        "button",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/hero.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
-      "name": "promo",
-      "type": "registry:component",
-      "title": "Promo",
-      "description": "Attention-grabbing section to display the current promotional deal.",
-      "registryDependencies": [
-        "button",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/promo.tsx",
           "type": "registry:component"
         },
         {

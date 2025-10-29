@@ -2,12 +2,13 @@
 
 import type { NavigationCategory } from "@/components/brand-sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { getBlocks, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getUIPrimitives, getComponents } from "@/lib/registry";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const blockItems = getBlocks();
+const componentItems = getComponents();
 const uiItems = getUIPrimitives();
 
 const gettingStartedItems = [
@@ -30,9 +31,17 @@ export function RegistrySidebar() {
     },
   ];
 
+  if (componentItems.length > 0) {
+    categories.push({
+      title: "Components",
+      items: componentItems,
+      pathPrefix: "/registry",
+    });
+  }
+
   if (uiItems.length > 0) {
     categories.push({
-      title: "UI",
+      title: "UI Primitives",
       items: uiItems,
       pathPrefix: "/registry",
     });

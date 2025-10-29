@@ -10,6 +10,7 @@ import { Sheet, SheetContent } from "@/components/ui/sheet";
 export interface NavigationItem {
   name: string;
   title: string;
+  disabled?: boolean;
 }
 
 export interface NavigationCategory {
@@ -76,16 +77,24 @@ export function BrandSidebar({ categories, open, onOpenChange }: BrandSidebarPro
                   ? `${category.pathPrefix}/${item.name}`
                   : item.name;
                 const isActive = pathname === itemPath;
+                const isDisabled = item.disabled;
 
                 return (
                   <Link
                     key={item.name}
-                    href={itemPath}
+                    href={isDisabled ? "#" : itemPath}
+                    onClick={(e) => {
+                      if (isDisabled) {
+                        e.preventDefault();
+                      }
+                    }}
                     className={cn(
-                      "block pl-4 text-sm hover:text-blue-600 hover:underline",
-                      isActive
+                      "block pl-4 text-sm",
+                      isDisabled
+                        ? "cursor-not-allowed text-muted-foreground/50 opacity-50"
+                        : isActive
                         ? "font-medium text-blue-600"
-                        : "text-foreground"
+                        : "text-foreground hover:text-blue-600 hover:underline"
                     )}
                   >
                     {item.title}

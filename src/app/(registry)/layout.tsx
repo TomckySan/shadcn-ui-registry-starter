@@ -6,7 +6,7 @@ import { useState } from "react";
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
 import { Toaster } from "@/components/ui/sonner";
-import { getBlocks, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
 
 export default function RegistryLayout({
   children,
@@ -15,7 +15,19 @@ export default function RegistryLayout({
 }>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
-  const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
+  const componentItems = getComponents()
+    .map((item) => ({
+      ...item,
+      disabled: ["login", "brand-sidebar"].includes(item.name),
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title));
+  const enabledUIPrimitives = ["accordion", "alert", "button", "card", "input", "radio", "select", "textarea"];
+  const uiItems = getUIPrimitives()
+    .map((item) => ({
+      ...item,
+      disabled: !enabledUIPrimitives.includes(item.name),
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title));
 
   const gettingStartedItems = [
     { name: "/", title: "Home" },
@@ -34,9 +46,17 @@ export default function RegistryLayout({
     },
   ];
 
+  if (componentItems.length > 0) {
+    categories.push({
+      title: "Components",
+      items: componentItems,
+      pathPrefix: "/registry",
+    });
+  }
+
   if (uiItems.length > 0) {
     categories.push({
-      title: "UI",
+      title: "UI Primitives",
       items: uiItems,
       pathPrefix: "/registry",
     });

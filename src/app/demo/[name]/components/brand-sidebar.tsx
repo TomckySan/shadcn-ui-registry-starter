@@ -1,10 +1,11 @@
 "use client";
 
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
-import { getBlocks, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
 
 const Demo = () => {
   const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
+  const componentItems = getComponents().sort((a, b) => a.title.localeCompare(b.title));
   const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
 
   const gettingStartedItems = [
@@ -24,9 +25,17 @@ const Demo = () => {
     },
   ];
 
+  if (componentItems.length > 0) {
+    categories.push({
+      title: "Components",
+      items: componentItems,
+      pathPrefix: "/registry",
+    });
+  }
+
   if (uiItems.length > 0) {
     categories.push({
-      title: "UI",
+      title: "UI Primitives",
       items: uiItems,
       pathPrefix: "/registry",
     });
