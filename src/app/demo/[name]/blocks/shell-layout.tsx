@@ -5,7 +5,7 @@ import React, { type ReactNode, useState } from "react";
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
 import { Toaster } from "@/components/ui/sonner";
-import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getUIPrimitives } from "@/lib/registry";
 
 export default function ShellLayout({
   children,
@@ -14,7 +14,6 @@ export default function ShellLayout({
 }>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
-  const osComponentsByCategory = getOutSystemsComponentsByCategory();
   const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
 
   const gettingStartedItems = [
@@ -38,38 +37,6 @@ export default function ShellLayout({
     categories.push({
       title: "UI",
       items: uiItems,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.primitives.length > 0) {
-    categories.push({
-      title: "Primitives",
-      items: osComponentsByCategory.primitives.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.layout.length > 0) {
-    categories.push({
-      title: "Layout",
-      items: osComponentsByCategory.layout.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.patterns.length > 0) {
-    categories.push({
-      title: "Patterns",
-      items: osComponentsByCategory.patterns.sort((a, b) => a.title.localeCompare(b.title)),
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.templates.length > 0) {
-    categories.push({
-      title: "Templates",
-      items: osComponentsByCategory.templates.sort((a, b) => a.title.localeCompare(b.title)),
       pathPrefix: "/registry",
     });
   }

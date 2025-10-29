@@ -2,13 +2,12 @@
 
 import type { NavigationCategory } from "@/components/brand-sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { getBlocks, getOutSystemsComponentsByCategory, getUIPrimitives } from "@/lib/registry";
+import { getBlocks, getUIPrimitives } from "@/lib/registry";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const blockItems = getBlocks();
-const osComponentsByCategory = getOutSystemsComponentsByCategory();
 const uiItems = getUIPrimitives();
 
 const gettingStartedItems = [
@@ -35,38 +34,6 @@ export function RegistrySidebar() {
     categories.push({
       title: "UI",
       items: uiItems,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.primitives.length > 0) {
-    categories.push({
-      title: "Primitives",
-      items: osComponentsByCategory.primitives,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.layout.length > 0) {
-    categories.push({
-      title: "Layout",
-      items: osComponentsByCategory.layout,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.patterns.length > 0) {
-    categories.push({
-      title: "Patterns",
-      items: osComponentsByCategory.patterns,
-      pathPrefix: "/registry",
-    });
-  }
-
-  if (osComponentsByCategory.templates.length > 0) {
-    categories.push({
-      title: "Templates",
-      items: osComponentsByCategory.templates,
       pathPrefix: "/registry",
     });
   }
