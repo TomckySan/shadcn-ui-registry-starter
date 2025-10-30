@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Registry Starter",
-  description: "Starter to help build a Shadcn Registry using Tailwind v4",
+  title: "ROUTE06 Enterprise UI Registry",
+  description: "ROUTE06 Enterprise UI Registry",
   icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
 };
 
