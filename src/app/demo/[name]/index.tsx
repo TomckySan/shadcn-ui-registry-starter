@@ -16,7 +16,6 @@ import { badge } from "@/app/demo/[name]/ui/badge";
 import { breadcrumb } from "@/app/demo/[name]/ui/breadcrumb";
 import { button } from "@/app/demo/[name]/ui/button";
 import { card } from "@/app/demo/[name]/ui/card";
-import { chart } from "@/app/demo/[name]/ui/chart";
 import { checkbox } from "@/app/demo/[name]/ui/checkbox";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
@@ -26,7 +25,6 @@ import { menuBar } from "@/app/demo/[name]/ui/menu-bar";
 import { radio } from "@/app/demo/[name]/ui/radio";
 import { select } from "@/app/demo/[name]/ui/select";
 import { separator } from "@/app/demo/[name]/ui/separator";
-import { skeleton } from "@/app/demo/[name]/ui/skeleton";
 import { slider } from "@/app/demo/[name]/ui/slider";
 import { sonner } from "@/app/demo/[name]/ui/sonner";
 import { switchComponent } from "@/app/demo/[name]/ui/switch";
@@ -60,7 +58,6 @@ export const demos: { [name: string]: Demo } = {
   breadcrumb,
   button,
   card,
-  chart,
   checkbox,
   dialog,
   "data-table": dataTable,
@@ -70,7 +67,6 @@ export const demos: { [name: string]: Demo } = {
   radio,
   select,
   separator,
-  skeleton,
   slider,
   switch: switchComponent,
   sonner,
