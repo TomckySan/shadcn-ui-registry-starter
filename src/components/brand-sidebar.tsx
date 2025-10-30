@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
-import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
 
 export interface NavigationItem {
   name: string;
@@ -21,61 +20,17 @@ export interface NavigationCategory {
 }
 
 interface BrandSidebarProps {
-  categories?: NavigationCategory[];
+  categories: NavigationCategory[];
 }
 
 export function BrandSidebar({ categories }: BrandSidebarProps) {
   const pathname = usePathname();
 
-  // categoriesが渡されない場合は、registryからデータを取得してカテゴリを構築
-  let navigationCategories: NavigationCategory[];
-
-  if (categories) {
-    navigationCategories = categories;
-  } else {
-    const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
-    const componentItems = getComponents().sort((a, b) => a.title.localeCompare(b.title));
-    const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
-
-    const gettingStartedItems = [
-      { name: "/", title: "Home" },
-      { name: "/tokens", title: "Design Tokens" },
-    ];
-
-    navigationCategories = [
-      {
-        title: "Getting Started",
-        items: gettingStartedItems,
-      },
-      {
-        title: "Blocks",
-        items: blockItems,
-        pathPrefix: "/registry",
-      },
-    ];
-
-    if (componentItems.length > 0) {
-      navigationCategories.push({
-        title: "Components",
-        items: componentItems,
-        pathPrefix: "/registry",
-      });
-    }
-
-    if (uiItems.length > 0) {
-      navigationCategories.push({
-        title: "UI Primitives",
-        items: uiItems,
-        pathPrefix: "/registry",
-      });
-    }
-  }
-
   return (
     <Sidebar collapsible="none">
       <SidebarContent>
         <div className="space-y-4 p-4">
-          {navigationCategories.map((category) => {
+          {categories.map((category) => {
             // itemsが空の場合、カテゴリタイトル自体をリンクとして表示
             if (category.items.length === 0 && category.name) {
               const categoryPath = category.pathPrefix
