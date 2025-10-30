@@ -23,7 +23,8 @@ export default function RegistryLayout({
     .sort((a, b) => a.title.localeCompare(b.title));
   const enabledUIPrimitives = [
     "accordion", "alert", "avatar", "badge", "breadcrumb",
-    "button", "card", "checkbox", "input", "radio", "select", "separator",
+    "button", "card", "checkbox", "input", "radio",
+    "select", "separator", "switch",
     "table", "tabs", "textarea", "toggle-group", "tooltip",
   ];
   const uiItems = getUIPrimitives()
