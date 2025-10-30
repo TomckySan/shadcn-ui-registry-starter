@@ -4,9 +4,8 @@ import type { ReactElement, ReactNode } from "react";
 import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 
 // components
-import { brandHeader } from "@/app/demo/[name]/components/brand-header";
-import { brandSidebar } from "@/app/demo/[name]/components/brand-sidebar";
 import { login } from "@/app/demo/[name]/components/login";
+import { logo } from "@/app/demo/[name]/components/logo";
 
 // ui
 import { accordion } from "@/app/demo/[name]/ui/accordion";
@@ -44,8 +43,7 @@ export const demos: { [name: string]: Demo } = {
 
   // components
   login,
-  "brand-header": brandHeader,
-  "brand-sidebar": brandSidebar,
+  logo,
 
   // ui
   accordion,
