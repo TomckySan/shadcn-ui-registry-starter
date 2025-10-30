@@ -33,7 +33,7 @@ export function RegistrySidebar() {
   if (componentItems.length > 0) {
     categories.push({
       title: "Components",
-      items: componentItems,
+      items: componentItems.filter((item) => item.name !== "brand-sidebar"),
       pathPrefix: "/registry",
     });
   }

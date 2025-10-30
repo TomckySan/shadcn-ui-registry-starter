@@ -48,7 +48,7 @@ export function ComponentCard({
           <p className="text-muted-foreground text-sm">{component.description}</p>
 
           <div className="flex items-center gap-1 sm:ml-auto">
-            <TooltipProvider>
+            {/* <TooltipProvider>
               <Tooltip>
                 <TooltipContent className="font-mono">
                   Copy npx command
@@ -68,13 +68,15 @@ export function ComponentCard({
                   </Button>
                 </TooltipTrigger>
               </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider> */}
 
-            <OpenInV0Button
-              registryUrl={registryUrl}
-              title={`${component.title} Kit`}
-              prompt={prompt}
-            />
+            {component.name === "dashboard" && (
+              <OpenInV0Button
+                registryUrl={registryUrl}
+                title={`${component.title} Kit`}
+                prompt={prompt}
+              />
+            )}
           </div>
         </div>
       </div>
