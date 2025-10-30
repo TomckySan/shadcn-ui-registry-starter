@@ -1,16 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * OutSystems Card Component
- *
- * A card component with OutSystems UI styling including:
- * - Enhanced shadows
- * - Smooth hover effects
- * - Rounded corners
- * - Flexible layout options
- */
-
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Card variant

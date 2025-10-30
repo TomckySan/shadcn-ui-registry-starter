@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -102,23 +101,18 @@ const requests = [
 ];
 
 export default function DashboardPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
-    <div className="flex min-h-screen w-full flex-col">
-      {/* ヘッダ（full-width） */}
-      <BrandHeader onMenuClick={() => setSidebarOpen(true)} />
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full flex-col">
+        {/* ヘッダ（full-width） */}
+        <BrandHeader />
 
-      {/* メインコンテンツエリア */}
-      <div className="flex flex-1 gap-6 p-6">
-        {/* 左サイド: ナビゲーション */}
-        <aside className="hidden w-52 shrink-0 lg:block">
-          <BrandSidebar
-            categories={menuItems}
-            open={sidebarOpen}
-            onOpenChange={setSidebarOpen}
-          />
-        </aside>
+        {/* メインコンテンツエリア */}
+        <div className="flex flex-1 gap-6 p-6">
+          {/* 左サイド: ナビゲーション */}
+          <aside className="hidden h-[calc(100vh-8.5rem)] w-52 shrink-0 overflow-hidden lg:block">
+            <BrandSidebar categories={menuItems} />
+          </aside>
 
         {/* 右サイド: メインエリア */}
         <main className="h-[calc(100vh-8.5rem)] flex-1 space-y-6 overflow-auto">
@@ -256,6 +250,7 @@ export default function DashboardPage() {
         </Card>
         </main>
       </div>
-    </div>
+      </div>
+    </SidebarProvider>
   );
 }

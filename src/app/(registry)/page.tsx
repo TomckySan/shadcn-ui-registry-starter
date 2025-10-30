@@ -1,98 +1,17 @@
-import { ArrowRight, Blocks, Box, Component, Layout, Layers, Square } from "lucide-react";
-import Link from "next/link";
-
-import { MCPTabs } from "@/components/registry/mcp-tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { getBlocks } from "@/lib/registry";
-
-const blockItems = getBlocks().slice(0, 5);
-
 export default function Home() {
   return (
     <div className="space-y-6">
       <div className="mb-8">
         <div className="space-y-2">
           <h1 className="font-bold text-3xl tracking-tight md:text-4xl">
-            OutSystems UI Registry
+            ROUTE06 Enterprise UI Registry
           </h1>
-          <p className="text-muted-foreground">
-            Distribute your design system tokens, custom components, hooks,
-            pages, and other files to any React project.
-          </p>
         </div>
       </div>
-
-{/*
-      <Card className="mb-4 shadow-none">
-        <CardHeader className="space-y-1">
-          <div className="flex items-center justify-between">
-            <CardTitle>Blocks</CardTitle>
-            <div className="rounded-md bg-primary p-1">
-              <Blocks className="size-5 text-primary-foreground" />
-            </div>
-          </div>
-          <CardDescription>
-            Pre-built blocks kits for consistent, repeatable generations
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent>
-          <div className="space-y-2">
-            {blockItems.map((item) => (
-              <div
-                key={item.name}
-                className="flex items-center justify-between"
-              >
-                <Link
-                  href={`/registry/${item.name}`}
-                  className="text-sm hover:underline"
-                >
-                  {item.title}
-                </Link>
-                <ArrowRight className="size-4 text-muted-foreground" />
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-*/}
-
-{/*
-      <div className="mb-4 rounded-lg border bg-card p-6">
-        <div className="flex flex-col gap-2">
-          <h2 className="font-semibold text-xl">MCP</h2>
-          <p className="mb-4 text-muted-foreground">
-            Integrate this registry with AI IDEs using Model Context Protocol
-            (MCP) using the following configuration. This utilizes this
-            Registry's theme tokens and CSS variables with the Shadcn CLI. To
-            ensure this works, double check that the{" "}
-            <Link href="/r/registry.json">
-              <code className="inline text-sm tabular-nums underline">
-                style:theme
-              </code>
-            </Link>{" "}
-            contains the same colors as your{" "}
-            <code className="inline text-sm tabular-nums">tokens.css</code>
-          </p>
-
-          <MCPTabs rootUrl={process.env.VERCEL_PROJECT_PRODUCTION_URL ?? ""} />
-        </div>
-      </div>
-*/}
 
       <div className="rounded-lg border bg-card p-6">
         <div className="flex flex-col gap-2">
           <h2 className="font-semibold text-xl">About</h2>
-          <p className="text-muted-foreground">
-            このレジストリは、<a href="https://outsystemsui.outsystems.com/" className="underline" target="_blank" rel="noreferrer">OutSystems UI</a>をベースとしたコンポーネントを提供しています。<br />
-            各コンポーネントとブロックには例とドキュメントが含まれており、カテゴリー別にコンポーネントを閲覧できます。<br />
-          </p>
           <p className="mt-2 text-muted-foreground">
             使い始めるには <a href="/registry/dashboard" className="underline">Dashboard Block</a> ページを開き、<span className="font-bold">Open in v0</span>ボタンをクリックしてください。<br />
           </p>

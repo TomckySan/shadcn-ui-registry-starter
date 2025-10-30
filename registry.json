@@ -1,13 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "OutSystems UI Registry",
+  "name": "ROUTE06 UI Registry",
   "homepage": "https://shadcn-ui-registry-starter-gray.vercel.app",
   "items": [
     {
       "name": "theme",
       "type": "registry:theme",
-      "title": "OutSystems UI Theme",
-      "description": "OutSystems UI design system theme",
+      "title": "ROUTE06 UI Theme",
+      "description": "ROUTE06 UI design system theme",
       "dependencies": [
         "radix-ui"
       ],

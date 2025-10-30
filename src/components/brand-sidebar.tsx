@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
+import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
 
 export interface NavigationItem {
   name: string;
@@ -22,115 +22,125 @@ export interface NavigationCategory {
 
 interface BrandSidebarProps {
   categories?: NavigationCategory[];
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
 }
 
-const DEFAULT_CATEGORIES: NavigationCategory[] = [
-  {
-    title: "Getting Started",
-    items: [
-      { name: "/", title: "Home" },
-    ],
-  },
-];
-
-export function BrandSidebar({ categories, open, onOpenChange }: BrandSidebarProps) {
+export function BrandSidebar({ categories }: BrandSidebarProps) {
   const pathname = usePathname();
-  const navigationCategories = categories || DEFAULT_CATEGORIES;
 
-  const navigationContent = (
-    <div className="space-y-4">
-      {navigationCategories.map((category) => {
-        // itemsが空の場合、カテゴリタイトル自体をリンクとして表示
-        if (category.items.length === 0 && category.name) {
-          const categoryPath = category.pathPrefix
-            ? `${category.pathPrefix}/${category.name}`
-            : category.name;
-          const isActive = pathname === categoryPath;
+  // categoriesが渡されない場合は、registryからデータを取得してカテゴリを構築
+  let navigationCategories: NavigationCategory[];
 
-          return (
-            <Link
-              key={category.title}
-              href={categoryPath}
-              className={cn(
-                "block text-sm hover:text-blue-600 hover:underline",
-                isActive
-                  ? "font-medium text-blue-600"
-                  : "text-foreground"
-              )}
-            >
-              {category.title}
-            </Link>
-          );
-        }
+  if (categories) {
+    navigationCategories = categories;
+  } else {
+    const blockItems = getBlocks().sort((a, b) => a.title.localeCompare(b.title));
+    const componentItems = getComponents().sort((a, b) => a.title.localeCompare(b.title));
+    const uiItems = getUIPrimitives().sort((a, b) => a.title.localeCompare(b.title));
 
-        // itemsがある場合は階層表示
-        return (
-          <div key={category.title}>
-            <div className="mb-2 text-sm font-semibold text-muted-foreground">
-              {category.title}
-            </div>
-            <div className="space-y-1">
-              {category.items.map((item) => {
-                const itemPath = category.pathPrefix
-                  ? `${category.pathPrefix}/${item.name}`
-                  : item.name;
-                const isActive = pathname === itemPath;
-                const isDisabled = item.disabled;
+    const gettingStartedItems = [
+      { name: "/", title: "Home" },
+      { name: "/tokens", title: "Design Tokens" },
+    ];
 
-                return (
-                  <Link
-                    key={item.name}
-                    href={isDisabled ? "#" : itemPath}
-                    onClick={(e) => {
-                      if (isDisabled) {
-                        e.preventDefault();
-                      }
-                    }}
-                    className={cn(
-                      "block pl-4 text-sm",
-                      isDisabled
-                        ? "cursor-not-allowed text-muted-foreground/50 opacity-50"
-                        : isActive
-                        ? "font-medium text-blue-600"
-                        : "text-foreground hover:text-blue-600 hover:underline"
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+    navigationCategories = [
+      {
+        title: "Getting Started",
+        items: gettingStartedItems,
+      },
+      {
+        title: "Blocks",
+        items: blockItems,
+        pathPrefix: "/registry",
+      },
+    ];
 
-  const sidebarContent = (
-    <ScrollArea className="h-full">
-      <div className="py-4">
-        {navigationContent}
-      </div>
-    </ScrollArea>
-  );
+    if (componentItems.length > 0) {
+      navigationCategories.push({
+        title: "Components",
+        items: componentItems,
+        pathPrefix: "/registry",
+      });
+    }
+
+    if (uiItems.length > 0) {
+      navigationCategories.push({
+        title: "UI Primitives",
+        items: uiItems,
+        pathPrefix: "/registry",
+      });
+    }
+  }
 
   return (
-    <>
-      {/* デスクトップ表示 */}
-      <div className="sticky top-0 hidden h-[calc(100vh-8.5rem)] overflow-hidden lg:block">
-        {sidebarContent}
-      </div>
+    <Sidebar collapsible="none">
+      <SidebarContent>
+        <div className="space-y-4 p-4">
+          {navigationCategories.map((category) => {
+            // itemsが空の場合、カテゴリタイトル自体をリンクとして表示
+            if (category.items.length === 0 && category.name) {
+              const categoryPath = category.pathPrefix
+                ? `${category.pathPrefix}/${category.name}`
+                : category.name;
+              const isActive = pathname === categoryPath;
 
-      {/* モバイル表示（Sheet） */}
-      <Sheet open={open} onOpenChange={onOpenChange}>
-        <SheetContent side="left" className="w-64 p-0">
-          <div className="h-full pt-12">
-            {sidebarContent}
-          </div>
-        </SheetContent>
-      </Sheet>
-    </>
+              return (
+                <Link
+                  key={category.title}
+                  href={categoryPath}
+                  className={cn(
+                    "block text-sm hover:text-blue-600 hover:underline",
+                    isActive
+                      ? "font-medium text-blue-600"
+                      : "text-foreground"
+                  )}
+                >
+                  {category.title}
+                </Link>
+              );
+            }
+
+            // itemsがある場合は階層表示
+            return (
+              <div key={category.title}>
+                <div className="mb-2 text-sm font-semibold text-muted-foreground">
+                  {category.title}
+                </div>
+                <div className="space-y-1">
+                  {category.items.map((item) => {
+                    const itemPath = category.pathPrefix
+                      ? `${category.pathPrefix}/${item.name}`
+                      : item.name;
+                    const isActive = pathname === itemPath;
+                    const isDisabled = item.disabled;
+
+                    return (
+                      <Link
+                        key={item.name}
+                        href={isDisabled ? "#" : itemPath}
+                        onClick={(e) => {
+                          if (isDisabled) {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={cn(
+                          "block pl-4 text-sm",
+                          isDisabled
+                            ? "cursor-not-allowed text-muted-foreground/50 opacity-50"
+                            : isActive
+                            ? "font-medium text-blue-600"
+                            : "text-foreground hover:text-blue-600 hover:underline"
+                        )}
+                      >
+                        {item.title}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </SidebarContent>
+    </Sidebar>
   );
 }

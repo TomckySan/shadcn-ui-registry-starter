@@ -1,4 +1,4 @@
-# OutSystems UI Registry
+# ROUTE06 UI Registry
 
 https://shadcn-ui-registry-starter-gray.vercel.app/
 

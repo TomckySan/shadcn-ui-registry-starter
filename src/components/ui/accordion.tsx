@@ -5,16 +5,6 @@ import { Accordion as AccordionPrimitive } from "radix-ui";
 import { ChevronDownIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/**
- * OutSystems Accordion Component
- *
- * An accordion component with OutSystems UI styling including:
- * - Enhanced visual hierarchy
- * - Smooth animations
- * - Multiple expansion support
- * - Consistent spacing
- */
-
 const Accordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   React.ComponentProps<typeof AccordionPrimitive.Root> & {

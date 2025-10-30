@@ -14,7 +14,7 @@ export default function TokensPage() {
       <div className="mb-8">
         <h1 className="font-bold text-3xl tracking-tight">Design Tokens</h1>
         <p className="mt-1 text-muted-foreground">
-          A comprehensive overview of all design tokens used in the OutSystems UI design system
+          A comprehensive overview of all design tokens used in the ROUTE06 UI design system
         </p>
       </div>
 
@@ -36,11 +36,10 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Brand Colors */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Brand Colors</h2>
         <p className="mb-6 text-muted-foreground">
-          The primary brand colors that define the OutSystems UI identity.
+          The primary brand colors that define the ROUTE06 UI identity.
         </p>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <ColorBlock name="Primary" className="bg-[#1068eb]" />
@@ -50,207 +49,13 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Extended Palette */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Extended Palette</h2>
         <p className="mb-6 text-muted-foreground">
           A comprehensive color palette with 12 color families, each with 7 shades.
         </p>
-
-        {/* Red */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Red</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#faeaea]" />
-            <ColorBlock name="Lighter" className="bg-[#e9aaaa]" />
-            <ColorBlock name="Light" className="bg-[#d96a6a]" />
-            <ColorBlock name="Red" className="bg-[#c92a2a]" />
-            <ColorBlock name="Dark" className="bg-[#ab2424]" />
-            <ColorBlock name="Darker" className="bg-[#8d1d1d]" />
-            <ColorBlock name="Darkest" className="bg-[#6f1717]" />
-          </div>
-        </div>
-        */}
-
-        {/* Pink */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Pink</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#fbebf0]" />
-            <ColorBlock name="Lighter" className="bg-[#efadc4]" />
-            <ColorBlock name="Light" className="bg-[#e27098]" />
-            <ColorBlock name="Pink" className="bg-[#d6336c]" />
-            <ColorBlock name="Dark" className="bg-[#b62b5c]" />
-            <ColorBlock name="Darker" className="bg-[#96244c]" />
-            <ColorBlock name="Darkest" className="bg-[#761c3b]" />
-          </div>
-        </div>
-        */}
-
-        {/* Grape */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Grape</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#f7ecfa]" />
-            <ColorBlock name="Lighter" className="bg-[#dfb2e9]" />
-            <ColorBlock name="Light" className="bg-[#c678d9]" />
-            <ColorBlock name="Grape" className="bg-[#ae3ec9]" />
-            <ColorBlock name="Dark" className="bg-[#9435ab]" />
-            <ColorBlock name="Darker" className="bg-[#7a2b8d]" />
-            <ColorBlock name="Darkest" className="bg-[#60226f]" />
-          </div>
-        </div>
-        */}
-
-        {/* Violet */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Violet</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#f1edfd]" />
-            <ColorBlock name="Lighter" className="bg-[#c6b6f6]" />
-            <ColorBlock name="Light" className="bg-[#9b7fef]" />
-            <ColorBlock name="Violet" className="bg-[#7048e8]" />
-            <ColorBlock name="Dark" className="bg-[#5f3dc5]" />
-            <ColorBlock name="Darker" className="bg-[#4e32a2]" />
-            <ColorBlock name="Darkest" className="bg-[#3e2880]" />
-          </div>
-        </div>
-        */}
-
-        {/* Indigo */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Indigo</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#eceffd]" />
-            <ColorBlock name="Lighter" className="bg-[#b3c1f7]" />
-            <ColorBlock name="Light" className="bg-[#7b92f1]" />
-            <ColorBlock name="Indigo" className="bg-[#4263eb]" />
-            <ColorBlock name="Dark" className="bg-[#3854c8]" />
-            <ColorBlock name="Darker" className="bg-[#2e45a5]" />
-            <ColorBlock name="Darkest" className="bg-[#243681]" />
-          </div>
-        </div>
-        */}
-
-        {/* Blue */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Blue</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#e8f2fa]" />
-            <ColorBlock name="Lighter" className="bg-[#a3c9ea]" />
-            <ColorBlock name="Light" className="bg-[#5fa1db]" />
-            <ColorBlock name="Blue" className="bg-[#1a79cb]" />
-            <ColorBlock name="Dark" className="bg-[#1667ad]" />
-            <ColorBlock name="Darker" className="bg-[#12558e]" />
-            <ColorBlock name="Darkest" className="bg-[#0e4370]" />
-          </div>
-        </div>
-        */}
-
-        {/* Cyan */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Cyan</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#e7f2f4]" />
-            <ColorBlock name="Lighter" className="bg-[#9eccd3]" />
-            <ColorBlock name="Light" className="bg-[#56a6b2]" />
-            <ColorBlock name="Cyan" className="bg-[#0d8091]" />
-            <ColorBlock name="Dark" className="bg-[#0b6d7b]" />
-            <ColorBlock name="Darker" className="bg-[#095a66]" />
-            <ColorBlock name="Darkest" className="bg-[#074650]" />
-          </div>
-        </div>
-        */}
-
-        {/* Teal */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Teal</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#e6f2ef]" />
-            <ColorBlock name="Lighter" className="bg-[#9cccbd]" />
-            <ColorBlock name="Light" className="bg-[#52a58c]" />
-            <ColorBlock name="Teal" className="bg-[#087f5b]" />
-            <ColorBlock name="Dark" className="bg-[#076c4d]" />
-            <ColorBlock name="Darker" className="bg-[#065940]" />
-            <ColorBlock name="Darkest" className="bg-[#044632]" />
-          </div>
-        </div>
-        */}
-
-        {/* Green */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Green</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#ebf7ed]" />
-            <ColorBlock name="Lighter" className="bg-[#afe0b8]" />
-            <ColorBlock name="Light" className="bg-[#73c982]" />
-            <ColorBlock name="Green" className="bg-[#37b24d]" />
-            <ColorBlock name="Dark" className="bg-[#2f9741]" />
-            <ColorBlock name="Darker" className="bg-[#267d36]" />
-            <ColorBlock name="Darkest" className="bg-[#1e622a]" />
-          </div>
-        </div>
-        */}
-
-        {/* Lime */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Lime</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#f1f8e8]" />
-            <ColorBlock name="Lighter" className="bg-[#c7e3a2]" />
-            <ColorBlock name="Light" className="bg-[#9ecd5c]" />
-            <ColorBlock name="Lime" className="bg-[#74b816]" />
-            <ColorBlock name="Dark" className="bg-[#639c13]" />
-            <ColorBlock name="Darker" className="bg-[#51810f]" />
-            <ColorBlock name="Darkest" className="bg-[#40650c]" />
-          </div>
-        </div>
-        */}
-
-        {/* Orange */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Orange</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#fef0e6]" />
-            <ColorBlock name="Lighter" className="bg-[#fcc29c]" />
-            <ColorBlock name="Light" className="bg-[#f99551]" />
-            <ColorBlock name="Orange" className="bg-[#f76707]" />
-            <ColorBlock name="Dark" className="bg-[#d25806]" />
-            <ColorBlock name="Darker" className="bg-[#ad4805]" />
-            <ColorBlock name="Darkest" className="bg-[#883904]" />
-          </div>
-        </div>
-        */}
-
-        {/* Yellow */}
-        {/*
-        <div className="mb-8">
-          <h3 className="mb-3 font-medium">Yellow</h3>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
-            <ColorBlock name="Lightest" className="bg-[#fef5e5]" />
-            <ColorBlock name="Lighter" className="bg-[#fbd999]" />
-            <ColorBlock name="Light" className="bg-[#f8bc4c]" />
-            <ColorBlock name="Yellow" className="bg-[#f59f00]" />
-            <ColorBlock name="Dark" className="bg-[#d08700]" />
-            <ColorBlock name="Darker" className="bg-[#ac6f00]" />
-            <ColorBlock name="Darkest" className="bg-[#875700]" />
-          </div>
-        </div>
-        */}
       </section>
 
-      {/* OutSystems UI Neutral Palette */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Neutral Palette</h2>
         <p className="mb-6 text-muted-foreground">
@@ -271,7 +76,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Semantic Palette */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Semantic Colors</h2>
         <p className="mb-6 text-muted-foreground">
@@ -289,7 +93,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Typography - Font Sizes */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Typography (Font Sizes)</h2>
         <p className="mb-6 text-muted-foreground">
@@ -309,7 +112,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Typography - Font Weights */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Typography (Font Weights)</h2>
         <p className="mb-6 text-muted-foreground">
@@ -323,7 +125,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Border Radius */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Border Radius</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -333,7 +134,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Border Size */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Border Size</h2>
         <p className="mb-6 text-muted-foreground">
@@ -347,7 +147,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Spacing */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Spacing Scale</h2>
         <p className="mb-6 text-muted-foreground">
@@ -365,7 +164,6 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* OutSystems UI Shadow */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Shadow Scale</h2>
         <p className="mb-6 text-muted-foreground">

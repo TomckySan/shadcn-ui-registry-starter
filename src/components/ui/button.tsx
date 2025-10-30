@@ -3,19 +3,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * OutSystems Button Component
- *
- * A button component with OutSystems UI styling including:
- * - Type variants (Primary, Secondary)
- * - Semantic colors (Default, Cancel, Error, Success)
- * - Shape variants (Sharp, Soft, Rounded)
- * - Size variants (Small, Default, Large)
- * - Icon support
- * - Disabled state
- * - asChild support for rendering as a different element
- */
-
 export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "size"> {
   /**
    * Button variant

@@ -515,8 +515,6 @@
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
 
-  /* OutSystems UI Border Radius */
-  /* https://outsystemsui.outsystems.com/WebStyleGuidePreview/Border.aspx */
   --radius-sm: 0px;
   --radius-md: 4px;
   --radius-lg: 4px;
@@ -887,7 +885,6 @@
   .shadow-lg { box-shadow: var(--shadow-lg); }
   .shadow-xl { box-shadow: var(--shadow-xl); }
 
-  /* -- OutSystems UI Semantic Palette -- */
   .background-info { background-color: #017aad; }
   .background-info-light { background-color: #e5f5fc; }
   .text-info { background-color: #017aad; }
@@ -907,5 +904,4 @@
   .background-error-light { background-color: #fceaea; }
   .text-error { color: #dc2020; }
   .text-error-light { color: #fceaea; }
-  /* -- End OutSystems UI Semantic Palette -- */
 }
