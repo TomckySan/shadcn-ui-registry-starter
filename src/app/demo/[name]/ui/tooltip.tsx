@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -13,7 +12,7 @@ export const tooltip = {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="secondary">Hover</Button>
+            <span className="cursor-pointer">Open Tooltip</span>
           </TooltipTrigger>
           <TooltipContent>Add to library</TooltipContent>
         </Tooltip>
