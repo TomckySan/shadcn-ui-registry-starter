@@ -19,9 +19,7 @@ import { card } from "@/app/demo/[name]/ui/card";
 import { checkbox } from "@/app/demo/[name]/ui/checkbox";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
-import { dropdownMenu } from "@/app/demo/[name]/ui/dropdown-menu";
 import { input } from "@/app/demo/[name]/ui/input";
-import { menuBar } from "@/app/demo/[name]/ui/menu-bar";
 import { radio } from "@/app/demo/[name]/ui/radio";
 import { select } from "@/app/demo/[name]/ui/select";
 import { separator } from "@/app/demo/[name]/ui/separator";
@@ -60,9 +58,7 @@ export const demos: { [name: string]: Demo } = {
   checkbox,
   dialog,
   "data-table": dataTable,
-  "dropdown-menu": dropdownMenu,
   input,
-  "menu-bar": menuBar,
   radio,
   select,
   separator,
