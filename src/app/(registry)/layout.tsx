@@ -18,10 +18,10 @@ export default function RegistryLayout({
   const componentItems = getComponents()
     .map((item) => ({
       ...item,
-      disabled: ["login", "brand-sidebar"].includes(item.name),
+      disabled: ["login", "logo", "brand-sidebar"].includes(item.name),
     }))
     .sort((a, b) => a.title.localeCompare(b.title));
-  const enabledUIPrimitives = ["accordion", "alert", "button", "card", "input", "radio", "select", "textarea"];
+  const enabledUIPrimitives = ["accordion", "alert", "avatar", "badge", "button", "card", "input", "radio", "select", "textarea"];
   const uiItems = getUIPrimitives()
     .map((item) => ({
       ...item,
@@ -31,7 +31,7 @@ export default function RegistryLayout({
 
   const gettingStartedItems = [
     { name: "/", title: "Home" },
-    { name: "/tokens", title: "Design Tokens" },
+    // { name: "/tokens", title: "Design Tokens" },
   ];
 
   const categories: NavigationCategory[] = [

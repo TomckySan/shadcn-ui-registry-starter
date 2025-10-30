@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export const avatar = {
   name: "avatar",
   components: {
+    /*
     Default: (
       <Avatar>
         <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -11,6 +12,7 @@ export const avatar = {
         </AvatarFallback>
       </Avatar>
     ),
+    */
     Fallback: (
       <Avatar>
         <AvatarImage src="https://github.com" alt="@shadcn" />

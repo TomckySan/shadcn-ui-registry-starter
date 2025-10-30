@@ -18,6 +18,24 @@ export default function TokensPage() {
         </p>
       </div>
 
+      {/* Font Family */}
+      <section className="mb-12">
+        <h2 className="mb-4 font-semibold text-xl">Font Family</h2>
+        <p className="mb-6 text-muted-foreground">
+          System font stack for optimal performance and native look across platforms.
+        </p>
+        <div className="rounded border p-6">
+          <div className="mb-4">
+            <p className="text-foreground mb-2" style={{ fontFamily: 'var(--font-family-base)' }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <code className="block font-mono text-muted-foreground text-xs mb-4 break-all">
+              --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+            </code>
+          </div>
+        </div>
+      </section>
+
       {/* OutSystems UI Brand Colors */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Brand Colors</h2>
@@ -40,6 +58,7 @@ export default function TokensPage() {
         </p>
 
         {/* Red */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Red</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -52,8 +71,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#6f1717]" />
           </div>
         </div>
+        */}
 
         {/* Pink */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Pink</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -66,8 +87,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#761c3b]" />
           </div>
         </div>
+        */}
 
         {/* Grape */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Grape</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -80,8 +103,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#60226f]" />
           </div>
         </div>
+        */}
 
         {/* Violet */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Violet</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -94,8 +119,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#3e2880]" />
           </div>
         </div>
+        */}
 
         {/* Indigo */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Indigo</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -108,8 +135,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#243681]" />
           </div>
         </div>
+        */}
 
         {/* Blue */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Blue</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -122,8 +151,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#0e4370]" />
           </div>
         </div>
+        */}
 
         {/* Cyan */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Cyan</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -136,8 +167,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#074650]" />
           </div>
         </div>
+        */}
 
         {/* Teal */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Teal</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -150,8 +183,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#044632]" />
           </div>
         </div>
+        */}
 
         {/* Green */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Green</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -164,8 +199,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#1e622a]" />
           </div>
         </div>
+        */}
 
         {/* Lime */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Lime</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -178,8 +215,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#40650c]" />
           </div>
         </div>
+        */}
 
         {/* Orange */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Orange</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -192,8 +231,10 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#883904]" />
           </div>
         </div>
+        */}
 
         {/* Yellow */}
+        {/*
         <div className="mb-8">
           <h3 className="mb-3 font-medium">Yellow</h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-7">
@@ -206,6 +247,7 @@ export default function TokensPage() {
             <ColorBlock name="Darkest" className="bg-[#875700]" />
           </div>
         </div>
+        */}
       </section>
 
       {/* OutSystems UI Neutral Palette */}
@@ -244,30 +286,6 @@ export default function TokensPage() {
           <ColorBlock name="Success" className="bg-[#29823b]" />
           <ColorBlock name="Info Light" className="bg-[#e5f5fc]" />
           <ColorBlock name="Info" className="bg-[#017aad]" />
-        </div>
-      </section>
-
-      {/* OutSystems UI Typography - Font Family */}
-      <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">Typography (Font Family)</h2>
-        <p className="mb-6 text-muted-foreground">
-          System font stack for optimal performance and native look across platforms.
-        </p>
-        <div className="rounded border p-6">
-          <div className="mb-4">
-            <div className="font-medium mb-2">Base Font Family</div>
-            <code className="block font-mono text-muted-foreground text-xs mb-4 break-all">
-              --font-family-base: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
-            </code>
-          </div>
-          <div>
-            <p className="text-foreground mb-2" style={{ fontFamily: 'var(--font-family-base)' }}>
-              The quick brown fox jumps over the lazy dog
-            </p>
-            <p className="text-foreground" style={{ fontFamily: 'var(--font-family-base)' }}>
-              ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
-            </p>
-          </div>
         </div>
       </section>
 

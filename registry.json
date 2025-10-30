@@ -147,7 +147,7 @@
     {
       "name": "logo",
       "type": "registry:component",
-      "title": "Brand Logo",
+      "title": "Logo",
       "description": "A styled, simple, reusable logo",
       "registryDependencies": [
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
