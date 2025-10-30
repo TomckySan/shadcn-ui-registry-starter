@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
 import { BrandSidebar, type NavigationCategory } from "@/components/brand-sidebar";
-import { Toaster } from "@/components/ui/sonner";
 import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
 
 export default function RegistryLayout({
@@ -24,7 +23,7 @@ export default function RegistryLayout({
   const enabledUIPrimitives = [
     "accordion", "alert", "avatar", "badge", "breadcrumb",
     "button", "card", "checkbox", "input", "radio",
-    "select", "separator", "switch",
+    "select", "separator", "sonner", "switch",
     "table", "tabs", "textarea", "toggle-group", "tooltip",
   ];
   const uiItems = getUIPrimitives()
@@ -90,8 +89,6 @@ export default function RegistryLayout({
         {/* 右サイド: メインエリア */}
         <main className="h-[calc(100vh-8.5rem)] flex-1 overflow-auto">{children}</main>
       </div>
-
-      <Toaster />
     </div>
   );
 }

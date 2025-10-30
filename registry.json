@@ -30,7 +30,6 @@
       "title": "Dashboard",
       "description": "A dashboard application with your brand themed components",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-header.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/brand-sidebar.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
@@ -114,7 +113,6 @@
       "title": "Header",
       "description": "A styled, simple, reusable header",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/logo.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
@@ -136,7 +134,6 @@
       "title": "Sidebar",
       "description": "A styled, simple, reusable sidebar",
       "registryDependencies": [
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/sonner.json",
         "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
       ],
       "files": [
@@ -480,28 +477,6 @@
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        }
-      ]
-    },
-    {
-      "name": "sonner",
-      "type": "registry:ui",
-      "title": "Sonner",
-      "description": "An opinionated toast component for React.",
-      "registryDependencies": [
-        "sonner",
-        "https://shadcn-ui-registry-starter-gray.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/components/ui/sonner.tsx",
-          "type": "registry:file",
-          "target": "components/ui/sonner.tsx"
         }
       ]
     },

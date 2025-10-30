@@ -26,7 +26,6 @@ import { radio } from "@/app/demo/[name]/ui/radio";
 import { select } from "@/app/demo/[name]/ui/select";
 import { separator } from "@/app/demo/[name]/ui/separator";
 import { slider } from "@/app/demo/[name]/ui/slider";
-import { sonner } from "@/app/demo/[name]/ui/sonner";
 import { switchComponent } from "@/app/demo/[name]/ui/switch";
 import { table } from "@/app/demo/[name]/ui/table";
 import { tabs } from "@/app/demo/[name]/ui/tabs";
@@ -69,7 +68,6 @@ export const demos: { [name: string]: Demo } = {
   separator,
   slider,
   switch: switchComponent,
-  sonner,
   table,
   tabs,
   textarea,
