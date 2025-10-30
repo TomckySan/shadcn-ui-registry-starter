@@ -14,6 +14,7 @@ export default function Home() {
           <h2 className="font-semibold text-xl">About</h2>
           <p className="mt-2 text-muted-foreground">
             使い始めるには <a href="/registry/dashboard" className="underline">Dashboard Block</a> ページを開き、<span className="font-bold">Open in v0</span>ボタンをクリックしてください。<br />
+            クリック後、遷移先のv0チャットでプロンプトを入力し、プロトタイプ作成を開始します。
           </p>
 
           <p className="mt-4 text-[#1B1F23] dark:text-white">
