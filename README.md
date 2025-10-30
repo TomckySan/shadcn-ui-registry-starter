@@ -1,6 +1,6 @@
-<a href="https://shadcn-ui-registry-starter-gray.vercel.app/">
-  <h1 align="center">OutSystems UI Registry</h1>
-</a>
+# OutSystems UI Registry
+
+https://shadcn-ui-registry-starter-gray.vercel.app/
 
 ## Open in v0
 
