@@ -7,6 +7,14 @@ import { BrandSidebar, type NavigationCategory } from "@/components/brand-sideba
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -114,6 +122,22 @@ export default function DashboardPage() {
 
         {/* 右サイド: メインエリア */}
         <main className="h-[calc(100vh-8.5rem)] flex-1 space-y-6 overflow-auto">
+        {/* パンくずリスト */}
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">List</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Detail</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         {/* アラート通知 */}
         <div className="space-y-4">

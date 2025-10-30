@@ -21,7 +21,7 @@ export default function RegistryLayout({
       disabled: ["login", "logo", "brand-sidebar"].includes(item.name),
     }))
     .sort((a, b) => a.title.localeCompare(b.title));
-  const enabledUIPrimitives = ["accordion", "alert", "avatar", "badge", "button", "card", "input", "radio", "select", "textarea"];
+  const enabledUIPrimitives = ["accordion", "alert", "avatar", "badge", "breadcrumb", "button", "card", "input", "radio", "select", "textarea"];
   const uiItems = getUIPrimitives()
     .map((item) => ({
       ...item,

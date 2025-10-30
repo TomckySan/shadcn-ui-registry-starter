@@ -52,6 +52,21 @@
           "target": "components/ui/alert.tsx"
         },
         {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:file",
+          "target": "components/ui/avatar.tsx"
+        },
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:file",
+          "target": "components/ui/badge.tsx"
+        },
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:file",
+          "target": "components/ui/breadcrumb.tsx"
+        },
+        {
           "path": "src/components/ui/button.tsx",
           "type": "registry:file",
           "target": "components/ui/button.tsx"
