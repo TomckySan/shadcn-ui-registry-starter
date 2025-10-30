@@ -24,7 +24,7 @@ export default function RegistryLayout({
   const enabledUIPrimitives = [
     "accordion", "alert", "avatar", "badge", "breadcrumb",
     "button", "card", "checkbox", "input", "radio", "select",
-    "textarea", "tooltip", "separator"
+    "textarea", "toggle-group", "tooltip", "separator"
   ];
   const uiItems = getUIPrimitives()
     .map((item) => ({
