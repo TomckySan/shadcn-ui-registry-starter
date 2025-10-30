@@ -77,6 +77,11 @@
           "target": "components/ui/card.tsx"
         },
         {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:file",
+          "target": "components/ui/checkbox.tsx"
+        },
+        {
           "path": "src/components/ui/input.tsx",
           "type": "registry:file",
           "target": "components/ui/input.tsx"
