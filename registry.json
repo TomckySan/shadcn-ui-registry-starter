@@ -294,7 +294,8 @@
       "files": [
         {
           "path": "src/components/brand-header.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "src/components/brand-header.tsx"
         },
         {
           "path": "src/layouts/shell-layout.tsx",
@@ -314,7 +315,8 @@
       "files": [
         {
           "path": "src/components/brand-sidebar.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "src/components/brand-sidebar.tsx"
         },
         {
           "path": "src/layouts/shell-layout.tsx",
@@ -357,7 +359,8 @@
       "files": [
         {
           "path": "src/components/logo.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "src/components/logo.tsx"
         },
         {
           "path": "src/layouts/minimal-layout.tsx",
