@@ -31,6 +31,16 @@
           "path": "registry/common/package.json",
           "type": "registry:file",
           "target": "package.json"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "src/hooks/use-mobile.ts"
         }
       ]
     },
