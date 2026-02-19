@@ -28,7 +28,7 @@
           "target": "tsconfig.json"
         },
         {
-          "path": "package.json",
+          "path": "registry/common/package.json",
           "type": "registry:file",
           "target": "package.json"
         }
